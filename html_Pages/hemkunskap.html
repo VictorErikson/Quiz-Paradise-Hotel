@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Är du smartare än en Paradise-deltagare?</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <script src="../JS_Pages/index.js" defer></script>
     <script src="../JS_Pages/hemkunskap.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Parkinsans&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
 </head>
 <body>
     <header>
@@ -24,9 +27,9 @@
         </div>
     </header>
     <main>
-        <h2 class="citat">"Jag kan inte laga mat, men jag är en jävel på kärlek" - Kristian Täljeblad</h2>
+        <h2 class="citat"><span class="citation">"</span>Jag kan inte laga mat, men jag är en jävel på kärlek<span class="citation">"</span><span class="participant"> - Kristian Täljeblad</span></h2>
         <div class="InstructionsContainer">
-            <img src="../assets/images/paradisehotel-logo.webp" alt="Paradise Hotel logo">
+            <img src="../assets/images/paradisehotel-logo_soft.svg" alt="Paradise Hotel logo">
             <h2 class="instructions">På tavlan finns 24 rätter, 10 är sanna och 14 är falska. Klicka i de rätta, ett poäng per rätt svar.</h2>
             <fieldset class="questions">
                 <input type="checkbox" id="Columbuskaka" name="food" value="false">
@@ -78,7 +81,7 @@
                 <input type="checkbox" id="Caracas" name="food" value="false">
                 <label for="Caracas">Caracas</label>
             </fieldset>
-            <button class="done">Klar!</button>
+            <button class="done bluBbutton" >Klar!</button>
         </div>
     </main>
     

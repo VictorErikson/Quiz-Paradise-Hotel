@@ -1,0 +1,85 @@
+
+
+body {
+    height: 100vh;
+    background-image: url("../assets/images/background.svg");
+    // background: color(red);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: "Parkinsans", sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    width: 80%;
+    .modeSwitch {
+        display: flex;
+        margin: 20px 0px;
+
+        img{
+            width: 20px;
+            margin: 0px 10px;
+        }
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+main {
+    width: 80%;
+    .citat {
+        margin-bottom: 180px;
+        font-size: 20px;
+        span {
+            font-size: 25px;
+        }
+        .participant {
+            font-size: 15px;
+        }
+    }
+
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    .InstructionsContainer{
+        width: 80%;
+        background-color: rgba(49, 29, 104, 0.6);
+        padding: 40px;
+        padding-top: 80px;
+        position: relative;
+        border-radius: 60px;
+
+
+        img{
+            width: 90%;
+            position: absolute;
+            top: -120px;
+            left: 30px;
+        }
+    }
+    .btnsContainer{
+        @include flex();
+        margin-top: 3.5rem;
+        padding-bottom: 3.5rem;
+        gap: 1.5rem;
+        width: 50%;
+        button {
+             @include btnLightPurple()
+             
+        }
+    }
+    
+}
+
+.bluBbutton {
+    @include btnLightPurple()
+}

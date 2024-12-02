@@ -1,0 +1,36 @@
+@mixin btnLightPurple() {
+    width: 100%;
+    background: #6949fd;
+    box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    margin: 0px;
+    text-transform: uppercase;
+    font-family: "Parkinsans", sans-serif;
+    
+      
+      &:hover {
+          background: darken(#6949fd, 10%);
+          box-shadow: 0px 2px 0px 3px #260c97, -2px 5px 0px 2px #5733f8 inset;
+          transform: scale(1.1);
+          cursor: pointer;                      
+          transition: transform 0.5s;
+      }
+      &:active {
+        transform: scale(1);
+        transition: transform 0.3s;
+        background: #6949fd;
+        box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
+      }
+  }
+
+  @mixin flex() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
