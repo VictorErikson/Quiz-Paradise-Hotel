@@ -18,12 +18,19 @@ header {
   flex-direction: row;
   justify-content: flex-end;
 }
+header .switchMusic {
+  background: none;
+  border: none;
+}
+header .switchMusic img {
+  width: 25px;
+}
 header .modeSwitch {
   display: flex;
   margin: 20px 0px;
 }
 header .modeSwitch img {
-  width: 20px;
+  width: 25px;
   margin: 0px 10px;
 }
 
@@ -36,41 +43,47 @@ main {
   align-items: center;
   height: 100%;
 }
-main .citat {
-  margin-bottom: 180px;
+main .quote {
+  margin-bottom: 140px;
   font-size: 20px;
 }
-main .citat span {
+main .quote span {
   font-size: 25px;
 }
-main .citat .participant {
+main .quote .participant {
   font-size: 15px;
 }
-main .InstructionsContainer {
-  width: 80%;
+main .question {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main .question .InstructionsContainer {
+  width: 400px;
   background: linear-gradient(to bottom, rgba(120, 92, 247, 0.6), rgba(68, 52, 140, 0.6));
   padding: 40px;
   padding-top: 80px;
   position: relative;
   border-radius: 60px;
+  margin-bottom: 40px;
 }
-main .InstructionsContainer img {
-  width: 90%;
+main .question .InstructionsContainer img {
+  max-width: 390px;
   position: absolute;
-  top: -120px;
-  left: 30px;
+  top: -100px;
 }
-main .btnsContainer {
+main .question .btnsContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 3.5rem;
   padding-bottom: 3.5rem;
   gap: 1.5rem;
   width: 50%;
 }
-main .btnsContainer button {
+main .question .btnsContainer button {
   width: 100%;
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
@@ -83,15 +96,16 @@ main .btnsContainer button {
   margin: 0px;
   text-transform: uppercase;
   font-family: "Parkinsans", sans-serif;
+  width: 300px;
 }
-main .btnsContainer button:hover {
+main .question .btnsContainer button:hover {
   background: #3f17fc;
   box-shadow: 0px 2px 0px 3px #260c97, -2px 5px 0px 2px #5733f8 inset;
   transform: scale(1.1);
   cursor: pointer;
   transition: transform 0.5s;
 }
-main .btnsContainer button:active {
+main .question .btnsContainer button:active {
   transform: scale(1);
   transition: transform 0.3s;
   background: #6949fd;
@@ -124,4 +138,145 @@ main .btnsContainer button:active {
   transition: transform 0.3s;
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
+}
+
+.headingHemkunskap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.headingHemkunskap .left {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.headingHemkunskap .left .time {
+  margin-left: 20px;
+}
+.headingHemkunskap .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.headingHemkunskap .right .switchMusic {
+  background: none;
+  border: none;
+}
+.headingHemkunskap .right .switchMusic img {
+  width: 25px;
+}
+.headingHemkunskap .right .modeSwitch img {
+  width: 25px;
+  margin: 0px 10px;
+}
+
+.headingSnabba {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.headingSnabba .left {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.headingSnabba .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.headingSnabba .right .switchMusic {
+  background: none;
+  border: none;
+}
+.headingSnabba .right .switchMusic img {
+  width: 25px;
+}
+.headingSnabba .right .modeSwitch img {
+  width: 25px;
+  margin: 0px 10px;
+}
+
+main .InstructionsContainer .info {
+  display: flex;
+  gap: 1.5rem;
+}
+main .InstructionsContainer .info h2 {
+  font-size: 15px;
+}
+main .InstructionsContainer .questions {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 10px;
+}
+main .InstructionsContainer .questions #questionContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+main .InstructionsContainer .questions #questionContainer h3 {
+  font-size: 24px;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+main .InstructionsContainer .questions #questionContainer label {
+  width: 100%;
+  background: #6949fd;
+  box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  margin: 0px;
+  text-transform: uppercase;
+  font-family: "Parkinsans", sans-serif;
+  width: 200px;
+}
+main .InstructionsContainer .questions #questionContainer label:hover {
+  background: #3f17fc;
+  box-shadow: 0px 2px 0px 3px #260c97, -2px 5px 0px 2px #5733f8 inset;
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+main .InstructionsContainer .questions #questionContainer label:active {
+  transform: scale(1);
+  transition: transform 0.3s;
+  background: #6949fd;
+  box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
+}
+main .InstructionsContainer .questions #questionContainer input {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.headingSvenska {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.headingSvenska .left {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.headingSvenska .left .time {
+  margin-left: 20px;
+}
+.headingSvenska .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.headingSvenska .right .modeSwitch img {
+  width: 25px;
+  margin: 0px 10px;
 }/*# sourceMappingURL=style.css.map */

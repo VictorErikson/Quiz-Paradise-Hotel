@@ -1,0 +1,35 @@
+.headingHemkunskap {
+    .left{
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+
+        .time{
+            margin-left: 20px;
+        }
+
+    }
+    .right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .switchMusic {
+            background: none;
+            border: none;
+            img {
+                width: 25px;
+            }
+        }
+        .modeSwitch {
+            img{
+                width: 25px;
+                margin: 0px 10px;
+            }
+        }
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+

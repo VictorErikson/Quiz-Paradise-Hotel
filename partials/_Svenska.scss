@@ -1,0 +1,28 @@
+.headingSvenska {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .left{
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+
+        .time{
+            margin-left: 20px;
+        }
+
+    }
+    .right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+        .modeSwitch {
+            img{
+                width: 25px;
+                margin: 0px 10px;
+            }
+        }
+    }
+}

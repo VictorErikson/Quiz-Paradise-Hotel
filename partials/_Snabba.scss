@@ -1,0 +1,72 @@
+.headingSnabba {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .left{
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+
+    }
+    .right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .switchMusic {
+            background: none;
+            border: none;
+            img {
+                width: 25px;
+            }
+        }
+        .modeSwitch {
+            img{
+                width: 25px;
+                margin: 0px 10px;
+            }
+        }
+    }
+}
+
+
+main {
+    .InstructionsContainer {
+        .info {
+            display: flex;
+            gap: 1.5rem;
+            h2{
+                font-size: 15px;
+            }
+        }
+        .questions {
+            border: none;
+            margin: 0px;
+            padding: 0px;
+            margin-top: 10px;
+
+            #questionContainer{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+                h3 {
+                    font-size: 24px;
+                    margin: 0px;
+                    margin-bottom: 10px;
+                }
+
+                label {
+                    @include btnLightPurple();
+                    width: 200px;
+                
+                }
+                input {
+                    position: fixed;
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}

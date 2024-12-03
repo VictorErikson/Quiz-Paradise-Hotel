@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Är du smartare än en Paradise-deltagare?</title>
+    <title>Är du smartare än en Paradise-deltagare? 10 - snabba</title>
     <link rel="stylesheet" href="../style.css" />
     <script src="../JS_Pages/index.js" defer></script>
     <script src="../JS_Pages/snabba.js" defer></script>
@@ -12,13 +12,12 @@
     </style>
 </head>
 <body>
-    <header>
+    <header class="headingSnabba">
         <div class="left">
-            <h1>10 Snabba</h1>
-            <h2>Tid kvar: </h2>
+            <h1 class="subject">10 Snabba</h1>
         </div>
         <div class="right">
-            <button class="turnOffMusic"><img src="../assets/symbols/volume_on.svg" alt="turnOffMusic"></button>
+            <button class="switchMusic"><img src="../assets/symbols/volume_on.svg" alt="turnOffMusic"></button>
             <div class="modeSwitch">
                 <img src="../assets/symbols/sunny_yellow.png" alt="sun">
                 <button id="modeSwitch">rundBoll</button>
@@ -27,114 +26,25 @@
         </div>
     </header>
     <main>
-        <h2 class="citat"><span class="citation">"</span>Vasaskeppets första seglats… Det kan ju ha varit 2005. Det var ju ett tag sedan.<span class="citation">"</span><span class="participant"> - Adrian</span></h2>
-        <div class="InstructionsContainer">
-            <img src="../assets/images/paradisehotel-logo_soft.svg" alt="Paradise Hotel logo">
-            <fieldset class="questions">
-                <div class="question1">
-                    <h3>När dog Jesus? </h3>
-                    <input type="radio" id="36" name="jesus" value="false">
-                    <label for="36">År 36 e.kr</label>
-                    <input type="radio" id="33" name="jesus" value="true">
-                    <label for="33">År 33 e.Kr.</label>
-                    <input type="radio" id="0" name="jesus" value="false">
-                    <label for="0">År 0</label>
-                    <input type="radio" id="5" name="jesus" value="false">
-                    <label for="5">År 5 f. Kr</label>
+        <h2 class="quote"><span class="citation">"</span>Vasaskeppets första seglats… Det kan ju ha varit 2005. Det var ju ett tag sedan.<span class="citation">"</span><span class="participant"> - Adrian</span></h2>
+        <div class="question">
+            <div class="InstructionsContainer">
+                <img src="../assets/images/paradisehotel-logo_soft.svg" alt="Paradise Hotel logo">
+                <div class="info">
+                    <h2 class="points">Poäng: 0/10</h2>
+                    <h2 class="time">Tid kvar: </h2>
                 </div>
-                <div class="question2">
-                    <h3>Hur många landskap finns det i Sverige?</h3>
-                    <input type="radio" id="22" name="landskap" value="false">
-                    <label for="22">22</label>
-                    <input type="radio" id="25" name="landskap" value="true">
-                    <label for="25">25</label>
-                    <input type="radio" id="32" name="landskap" value="false">
-                    <label for="32">32</label>
-                    <input type="radio" id="15" name="landskap" value="false">
-                    <label for="15">15</label>
+                <fieldset class="questions">
+                    <div id="questionContainer">
+                        <!-- <h3 id="question">När dog Jesus? </h3>
+                        <input type="radio" id="36" name="jesus" value="false">
+                        <label for="36">År 36 e.kr</label> -->
+                    </div>
+                    
+                    <!-- <button class="next bluBbutton">Nästa fråga</button> -->
+                </fieldset>
                 </div>
-                <div class="question3">
-                    <h3>Var ligger Markusplatsen?</h3>
-                    <input type="radio" id="copenhagen" name="markus" value="false">
-                    <label for="copenhagen">Köpenhamn, Danmark</label>
-                    <input type="radio" id="berlin" name="markus" value="false">
-                    <label for="berlin">Berlin, Tyskland</label>
-                    <input type="radio" id="london" name="markus" value="false">
-                    <label for="london">London, Storbritannien</label>
-                    <input type="radio" id="venedig" name="markus" value="true">
-                    <label for="venedig">Venedig, Italien</label>
-                </div>
-                <div class="question4">
-                    <h3>När blev Gustav Vasa kung?</h3>
-                    <input type="radio" id="1631" name="vasa" value="false">
-                    <label for="1631">1631</label>
-                    <input type="radio" id="1571" name="vasa" value="false">
-                    <label for="1571">1571</label>
-                    <input type="radio" id="1598" name="vasa" value="false">
-                    <label for="1598">1598</label>
-                    <input type="radio" id="1523" name="vasa" value="true">
-                    <label for="1523">1523</label>
-                </div>
-                <div class="question5">
-                    <h3>Stefan Löfven blev partiordförande för Centerpartiet 2014?</h3>
-                    <input type="radio" id="sant" name="lofven" value="false">
-                    <label for="sant">Sant</label>
-                    <input type="radio" id="falskt" name="lofven" value="true">
-                    <label for="falskt">Falskt</label>
-                </div>
-                <div class="question6">
-                    <h3>När skedde slaget vid Hastings?</h3>
-                    <input type="radio" id="1902" name="hastings" value="false">
-                    <label for="1902">År 1902</label>
-                    <input type="radio" id="1789" name="hastings" value="false">
-                    <label for="1789">År 1789</label>
-                    <input type="radio" id="1066" name="hastings" value="true">
-                    <label for="1066">År 1066</label>
-                    <input type="radio" id="1437" name="hastings" value="false">
-                    <label for="1437">År 1437</label>
-                </div>
-                <div class="question7">
-                    <h3>När skiljdes Svenska kyrkan från staten?</h3>
-                    <input type="radio" id="1874" name="kyrkan" value="false">
-                    <label for="1874">År 1874</label>
-                    <input type="radio" id="1791" name="kyrkan" value="false">
-                    <label for="1791">År 1791</label>
-                    <input type="radio" id="2000" name="kyrkan" value="true">
-                    <label for="2000">År 2000</label>
-                    <input type="radio" id="1913" name="kyrkan" value="false">
-                    <label for="1913">År 1913</label>
-                </div>
-                <div class="question8">
-                    <h3>Var ligger Akropolis?</h3>
-                    <input type="radio" id="rom" name="akropolis" value="false">
-                    <label for="rom">Rom, Italien</label>
-                    <input type="radio" id="aten" name="akropolis" value="true">
-                    <label for="aten">Aten, Grekland</label>
-                    <input type="radio" id="venedig" name="akropolis" value="false">
-                    <label for="venedig">Venedig, Italien</label>
-                    <input type="radio" id="paros" name="akropolis" value="false">
-                    <label for="paros">Paros, Grekland</label>
-                </div>
-                <div class="question9">
-                    <h3>Sverige är en republik?</h3>
-                    <input type="radio" id="true" name="republik" value="false">
-                    <label for="true">Sant</label>
-                    <input type="radio" id="false" name="republik" value="true">
-                    <label for="false">Falskt</label>
-                </div>
-                <div class="question10">
-                    <h3>När blev Carl XVI Gustaf kung?</h3>
-                    <input type="radio" id="1971" name="kungen" value="false">
-                    <label for="1971">1971</label>
-                    <input type="radio" id="1980" name="kungen" value="false">
-                    <label for="1980">1980</label>
-                    <input type="radio" id="1973" name="kungen" value="true">
-                    <label for="1973">1973</label>
-                    <input type="radio" id="1948" name="kungen" value="false">
-                    <label for="1948">1948</label>
-                </div>
-            </fieldset>
-            <button class="done bluBbutton">Klar!</button>
+            </div>
         </div>
     </main>
     
