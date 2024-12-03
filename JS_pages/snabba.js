@@ -133,6 +133,8 @@ const handleChoice = (answer, questionObj) => {
     const question =  questionObj.question;
     results.push({question, answer});
 
+    
+
     if (currentQuestionIndex < questions.length){
         
         console.log(results);
@@ -162,6 +164,10 @@ const displayQuestion = (index) => {
                 id: selectedOption.id,
                 value: selectedOption.value
             };
+            if (answer.value === true){
+                const sibling = event.target.nextElementSibling;
+                sibling.classList.add("correct");
+            }
             handleChoice(answer, questions[currentQuestionIndex]);
         });
         input.type = "radio";

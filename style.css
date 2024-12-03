@@ -199,31 +199,42 @@ main .question .btnsContainer button:active {
   margin: 0px 10px;
 }
 
-main .InstructionsContainer .info {
+main .question .InstructionsContainer {
+  width: 80%;
+}
+main .question .InstructionsContainer img {
+  min-width: 300px;
+  max-width: 480px;
+  position: absolute;
+  top: -2%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .question .InstructionsContainer .info {
   display: flex;
   gap: 1.5rem;
 }
-main .InstructionsContainer .info h2 {
+main .question .InstructionsContainer .info h2 {
   font-size: 15px;
 }
-main .InstructionsContainer .questions {
+main .question .InstructionsContainer .questions {
   border: none;
   margin: 0px;
   padding: 0px;
   margin-top: 10px;
 }
-main .InstructionsContainer .questions #questionContainer {
+main .question .InstructionsContainer .questions #questionContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
 }
-main .InstructionsContainer .questions #questionContainer h3 {
+main .question .InstructionsContainer .questions #questionContainer h3 {
   font-size: 24px;
   margin: 0px;
   margin-bottom: 10px;
 }
-main .InstructionsContainer .questions #questionContainer label {
+main .question .InstructionsContainer .questions #questionContainer label {
   width: 100%;
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
@@ -236,22 +247,26 @@ main .InstructionsContainer .questions #questionContainer label {
   margin: 0px;
   text-transform: uppercase;
   font-family: "Parkinsans", sans-serif;
-  width: 200px;
+  width: 80%;
 }
-main .InstructionsContainer .questions #questionContainer label:hover {
+main .question .InstructionsContainer .questions #questionContainer label:hover {
   background: #3f17fc;
   box-shadow: 0px 2px 0px 3px #260c97, -2px 5px 0px 2px #5733f8 inset;
   transform: scale(1.1);
   cursor: pointer;
   transition: transform 0.5s;
 }
-main .InstructionsContainer .questions #questionContainer label:active {
+main .question .InstructionsContainer .questions #questionContainer label:active {
   transform: scale(1);
   transition: transform 0.3s;
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
 }
-main .InstructionsContainer .questions #questionContainer input {
+main .question .InstructionsContainer .questions #questionContainer label .correct {
+  background: #027100;
+  box-shadow: 0px 2px 0px 3px #024201, -2px 5px 0px 2px #06a703 inset;
+}
+main .question .InstructionsContainer .questions #questionContainer input {
   position: fixed;
   opacity: 0;
   pointer-events: none;
