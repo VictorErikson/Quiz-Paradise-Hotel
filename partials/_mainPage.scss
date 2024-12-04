@@ -50,12 +50,12 @@ main {
     .quote {
         margin-bottom: 140px;
         font-size: 20px;
-        span {
-            font-size: 25px;
-        }
-        .participant {
-            font-size: 15px;
-        }
+        // span {
+        //     font-size: 25px;
+        // }
+        // .participant {
+        //     font-size: 15px;
+        // }
     }
 
     .question {
@@ -64,6 +64,7 @@ main {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        gap: 60px;
         
         .InstructionsContainer{
             width: 400px;
@@ -74,6 +75,7 @@ main {
             position: relative;
             border-radius: 60px;
             margin-bottom: 40px;
+
 
             img{
                 max-width: 390px;
@@ -86,10 +88,14 @@ main {
 
             padding-bottom: 3.5rem;
             gap: 1.5rem;
-            width: 50%;
-            button {
+            // width: 50%;
+            button, a {
                 @include btnLightPurple();
                 width: 300px;
+                text-align: center;
+            }
+            a {
+                text-decoration: none;
             }
         }
     }

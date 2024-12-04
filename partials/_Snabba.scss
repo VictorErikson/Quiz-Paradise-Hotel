@@ -34,6 +34,7 @@ main {
     .question{
         .InstructionsContainer {
             width: 80%;
+            max-width: 600px;
             img{
                 min-width: 300px;
                 max-width: 480px;
@@ -45,9 +46,20 @@ main {
             }
             .info {
                 display: flex;
-                gap: 1.5rem;
-                h2{
-                    font-size: 15px;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                .questionCount {
+                    margin-right: 40px;
+                }
+                .pointTime {
+                    
+                    display: flex;
+                    gap: 1.5rem;
+                    h2{
+                        font-size: 15px;
+                    }
                 }
             }
             .questions {
@@ -55,6 +67,7 @@ main {
                 margin: 0px;
                 padding: 0px;
                 margin-top: 10px;
+                
 
                 #questionContainer{
                     display: flex;
@@ -70,20 +83,47 @@ main {
                     label {
                         @include btnLightPurple();
                         width: 80%;
-                        .correct{
+                        max-width: 300px;
+                        text-align: center;
+                    }
+                    label.correct {
                             background: #027100;
                             box-shadow: 0px 2px 0px 3px #024201, -2px 5px 0px 2px #06a703 inset;
-                        }
-                    
+                    }
+                    label.incorrect {
+                            background: #711700;
+                            box-shadow: 0px 2px 0px 3px #521100, -2px 5px 0px 2px #8f2207 inset;
                     }
                     input {
                         position: fixed;
                         opacity: 0;
                         pointer-events: none;
                     }
+                    a{
+                        @include btnLightPurple();
+                        width: 80%;
+                        text-decoration: none;
+                        max-width: 300px;
+                        text-align: center;
+                    }
+
+                    ul {
+                        li {
+                            list-style: none;
+                        }
+                        li.false {
+                            color: #fd4b1e;
+                        }
+                        li.correct {
+                            color: #1cd318;
+                        }
+
+                    }
                 }
             }
         }
     }
 }
-
+.fail {
+    color: #fd4b1e;
+}

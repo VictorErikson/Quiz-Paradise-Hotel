@@ -14,7 +14,7 @@ const questions = [
     {
         category: "SAMHÄLLSKUNSKAP",
         question: "Hur många landskap finns det i Sverige?",
-        quote: "\"Vad fan är ett landskap?\" - Saga Scott",
+        quote: '"Vad fan är ett landskap?" - Saga Scott',
         options: [
             { id: "22", label: "22", value: false },
             { id: "25", label: "25", value: true },
@@ -38,7 +38,7 @@ const questions = [
     {
         category: "HISTORIA",
         question: "När blev Gustav Vasa kung?",
-        quote: "\"Jag har lärt mig att spanjorerna inte utrotade enhörningarna\" - Paulina \"Paow\" Danielsson, 2014",
+        quote: "\"Jag har lärt mig att spanjorerna inte utrotade enhörningarna\" - Paulina \"Paow\" Danielsson",
         options: [
             { id: "1631", label: "1631", value: false },
             { id: "1571", label: "1571", value: false },
@@ -84,7 +84,7 @@ const questions = [
     {
         category: "GEOGRAFI",
         question: "Var ligger Akropolis?",
-        quote: "\"Det finns väl två olika Afrika?\" - Josefine Caarle, 2015",
+        quote: "\"Det finns väl två olika Afrika?\" - Josefine Caarle",
         options: [
             { id: "rom", label: "Rom, Italien", value: false },
             { id: "aten", label: "Aten, Grekland", value: true },
@@ -106,7 +106,7 @@ const questions = [
     {
         category: "HISTORIA",
         question: "När blev Carl XVI Gustaf kung?",
-        quote: "\"Första mannen på månen. Var det typ på 1500-talet eller ännu längre tillbaka?\" - Josefine Caarle, 2015",
+        quote: "\"Första mannen på månen. Var det typ på 1500-talet eller ännu längre tillbaka?\" - Josefine Caarle",
         options: [
             { id: "1971", label: "1971", value: false },
             { id: "1980", label: "1980", value: false },
@@ -121,30 +121,152 @@ const questions = [
 const nextBtn = document.querySelector(".next")
 const questionContainer = document.querySelector("#questionContainer");
 const quote = document.querySelector(".quote");
+const points = document.querySelector(".points");
+const questionCount = document.querySelector(".questionCount")
 let currentQuestionIndex = 0;
 const results = [];
 let score = 0;
+let questionNmbr = 1;
+let warningTriggered = false;
+
+// klocka
+
+let countdownTime = 2 * 60;
+const timer = document.querySelector(".time");
+
+const updateTimer = () => {
+
+    const minutes = Math.floor(countdownTime / 60);
+    const seconds = countdownTime % 60;
+
+    timer.innerText = `Tid kvar: ${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
+
+    if (countdownTime <= 0) {
+        clearInterval(interval);
+        finnished("timeout");
+    } 
+
+    countdownTime--;
+}
+
+const interval = setInterval(updateTimer, 1000);
+
+updateTimer();
 
 
+const finnished = (reason) => {
 
+    
+    const result = () => {
+        questionCount.remove();
+        quote.innerText = '"För två år sedan kände att jag ville göra något annorlunda. Så då tog jag bort min förhud. Nu ligger den i min pappas frys" - Alexander Wigren';
+        questionContainer.innerHTML = ""
+        const msg = document.createElement("h2");
+        const resultsUl = document.createElement("ul");
+        questionContainer.append(resultsUl, msg);
+
+        results.forEach(question => {
+            const resultLi = document.createElement("li");
+            resultLi.innerText = `${question.question}: ${question.answer.answer}`
+            question.answer.value === "true" ? resultLi.classList.add("false") :resultLi.classList.add("correct");
+            resultsUl.append(resultLi);
+        })
+
+        const restartBtn = document.createElement("a")
+        restartBtn.innerText = "Försök igen"
+        restartBtn.href = "../index.html"
+
+        const lost = () => {
+
+            if (score > 5){
+                msg.innerText = "Du är en person som gärna klär dig minimalt, ofta tänker syndiga tankar och är hetast på stadens nattklubb. Du har faktist alla attribut och kunskaper det krävs för att medverka i en klassisk Paradise Hotel säsong."
+                questionContainer.append(restartBtn);
+            } else {
+                msg.innerText = "På med småbyxorna, olja in torson och tänk riktigt syndiga tankar orimligt högt. Du har faktiskt allt som krävs för att bli en ”Paradise”-deltagare. Stort grattis!"
+                const apply = document.createElement("a");
+                apply.innerText = "Ansök nu!";
+                apply.href = "https://shortaudition.com/paradise_hotel_2025";
+                apply.classList.add("apply");
+                questionContainer.append(apply);
+            }
+        }
+        const won = () => {
+            questionContainer.append(restartBtn);
+            msg.innerText = "Vad är nu detta? Du är helt enkelt för klipsk för att bli en Paradise Hotel-deltagare."
+
+        }
+
+        if (score > 7){won()}
+        else lost()
+    }
+
+    if (reason === "timeout"){
+        questionCount.remove();
+        questionContainer.innerHTML = ""
+        const timesUp = document.createElement("h2");
+        questionContainer.append(timesUp);
+        timesUp.innerText = "Ops, du fick slut på tid!"
+        timer.classList.add("fail")
+
+        setTimeout(result, 4000);
+    }else{
+        result();
+    }
+}
 
 const handleChoice = (answer, questionObj) => {
     currentQuestionIndex++;
     const question =  questionObj.question;
     results.push({question, answer});
+    score = results.filter(object => object.answer.value === "true").length;
+    points.innerText = `Poäng: ${score}/10`
+    const misstakes = results.filter(object => object.answer.value === "false").length;
 
     
-
-    if (currentQuestionIndex < questions.length){
+    const updateQuestion = () => {
+        if (currentQuestionIndex < questions.length){
+            setTimeout(() => {
+                quote.innerText = questions[currentQuestionIndex].quote;
+                questionNmbr ++;
+                questionCount.innerText = `Fråga ${questionNmbr} - ${questions[currentQuestionIndex].category}`
+                displayQuestion(currentQuestionIndex);}, 2000);
+                
+                
+            }else {
+                setTimeout(finnished, 2000);
+            }
+        }
         
-        console.log(results);
-        setTimeout(() => {
-            quote.innerText = questionObj.quote;
-            displayQuestion(currentQuestionIndex);}, 2000);
-        score = results.filter(object => object.answer.value === true).length;
-        // results.forEach(obect => {if (Object.value === true ){score ++}});
+    if (misstakes === 5 && !warningTriggered){
+        warningTriggered = true;
 
-}}
+        const warning = document.createElement("h2");
+        warning.innerText = "Dags att boka biljett till Paradise Hotel?";
+        warning.style.color = "#8f2207";
+        warning.style.fontSize = "24px";
+        questionContainer.insertBefore(warning, questionContainer.firstChild)
+
+        questionContainer.style.pointerEvents = "none";
+        setTimeout(() => {questionContainer.style.pointerEvents = "auto";}, 4000)
+
+        setTimeout(() => {
+            questionContainer.removeChild(questionContainer.firstChild);
+
+            if (currentQuestionIndex < questions.length){
+                    quote.innerText = questions[currentQuestionIndex ].quote;
+                    questionNmbr ++;
+                    questionCount.innerText = `Fråga ${questionNmbr}`
+                    displayQuestion(currentQuestionIndex);    
+                }else {
+                    setTimeout(finnished, 2000);
+                }
+            }, 4000);
+
+
+        } else {
+            updateQuestion();
+        }
+}
 
 
 
@@ -158,18 +280,31 @@ const displayQuestion = (index) => {
     
     questionObj.options.forEach(option => {
         const input = document.createElement("input");
+
         input.addEventListener("change", (event) => {
             const selectedOption = event.target;
             const answer = {
                 id: selectedOption.id,
-                value: selectedOption.value
+                value: selectedOption.value,
+                answer: selectedOption.nextElementSibling.innerText
             };
-            if (answer.value === true){
-                const sibling = event.target.nextElementSibling;
+            const grandparent = event.target.parentElement?.parentElement;
+            grandparent.style.pointerEvents = "none";
+            setTimeout(() => {grandparent.style.pointerEvents = "auto";}, 2000)
+            
+            
+            const sibling = event.target.nextElementSibling;
+            if (answer.value === "true"){
                 sibling.classList.add("correct");
-            }
+
+            }else sibling.classList.add("incorrect");
+            
+
             handleChoice(answer, questions[currentQuestionIndex]);
+            
+        
         });
+
         input.type = "radio";
         input.id = option.id;
         input.name = questionObj.name;
