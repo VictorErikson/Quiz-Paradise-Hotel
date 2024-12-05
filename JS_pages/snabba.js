@@ -168,7 +168,7 @@ const finnished = (reason) => {
         results.forEach(question => {
             const resultLi = document.createElement("li");
             resultLi.innerText = `${question.question}: ${question.answer.answer}`
-            question.answer.value === "true" ? resultLi.classList.add("false") :resultLi.classList.add("correct");
+            question.answer.value === "true" ? resultLi.classList.add("correct") :resultLi.classList.add("false");
             resultsUl.append(resultLi);
         })
 
@@ -319,12 +319,5 @@ const displayQuestion = (index) => {
     } )
 } 
 
-// nextBtn.addEventListener("click", () => {
-//     currentQuestionIndex++;
-
-//     if (currentQuestionIndex < questions.length){
-//         displayQuestion(currentQuestionIndex);
-//     }
-// })
-
 displayQuestion(currentQuestionIndex);
+

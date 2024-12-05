@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Är du smartare än en Paradise-deltagare? - Svenska</title>
     <link rel="stylesheet" href="../style.css" />
-    <script src="../JS_Pages/index.js" defer></script>
-    <script src="../JS_Pages/svenska.js" defer></script>
+    <script src="../JS_Pages/svenska.js" type="module" defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Parkinsans&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
     </style>
@@ -15,7 +14,7 @@
     <header class="headingSvenska">
         <div class="left">
             <h1 class="subject">SVENSKA</h1>
-            <h2 class="time">Tid kvar: </h2>
+            
         </div>
         <div class="right">
             <button class="switchMusic"><img src="../assets/symbols/volume_on.svg" alt="turnOffMusic"></button>
@@ -31,10 +30,16 @@
         <div class="question">
             <div class="InstructionsContainer">
                 <img src="../assets/images/paradisehotel-logo_soft.svg" alt="Paradise Hotel logo">
-                <h2 class="instructions">På tavlan finns 13 klassiska ordspråk. Klicka i de rätta, ett poäng per rätt svar.</h2>
-                <div class="heading">
+                <div class="info">    
+                    <!-- <h2 class="questionCount">Fråga 1</h2>
+                    <div class="pointTime">
+                        <h2 class="points">Poäng: 0/10</h2>
+                        <h2 class="time">Tid kvar: </h2>
+                    </div> -->
                 </div>
+                <h2 class="instructions">Avsluta de klassiska ordspråken, ett poäng per rätt svar.</h2>
                 <fieldset class="questions">
+                    <div id="questionContainer">
                     <!-- <div class="question1">
                         <h3>Skrattar bäst som skrattar...</h3>
 
@@ -49,190 +54,10 @@
                 
                         <input type="radio" id="prästen" name="skrattar" value="false">
                         <label for="prästen">Före prästen</label>
-                    </div>
-                    <div class="question2">
-                        <h3>När katten är borta dansar råttorna på...</h3>
-
-                        <input type="radio" id="amerikabåten" name="katten" value = "false">
-                        <label for="amerikabåten">Amerikabåten</label>
-                
-                        <input type="radio" id="farstugolvet" name="katten" value="false">
-                        <label for="farstugolvet">Farstugolvet</label>
-                
-                        <input type="radio" id="huvudet" name="katten" value="false">
-                        <label for="huvudet">Huvudet</label>
-                
-                        <input type="radio" id="bordet" name="katten" value="true">
-                        <label for="bordet">Bordet</label>
-                    </div>
-                    <div class="question3">
-                        <h3>Bättre en fågel i handen än tio i...</h3>
-
-                        <input type="radio" id="skogen" name="fågel" value = "true">
-                        <label for="skogen">Skogen</label>
-                
-                        <input type="radio" id="Huset" name="fågel" value="false">
-                        <label for="Huset">Huset</label>
-                
-                        <input type="radio" id="Källaren" name="fågel" value="false">
-                        <label for="Källaren">Källaren</label>
-                
-                        <input type="radio" id="Munnen" name="fågel" value="false">
-                        <label for="Munnen">Munnen</label>
-                    </div>
-                    <div class="question4">
-                        <h3>Kärt barn har många...</h3>
-
-                        <input type="radio" id="Vänner" name="barn" value = "false">
-                        <label for="Vänner">Vänner</label>
-                
-                        <input type="radio" id="Hopp" name="barn" value="false">
-                        <label for="Hopp">Hopp</label>
-                
-                        <input type="radio" id="Ögon" name="barn" value="false">
-                        <label for="Ögon">Ögon</label>
-                
-                        <input type="radio" id="Namn" name="barn" value="true">
-                        <label for="Namn">Namn</label>
-                    </div>
-                    <div class="question5">
-                        <h3>Upp som en sol och ner som en...</h3>
-
-                        <input type="radio" id="Pannkaka" name="uppOchNer" value = "true">
-                        <label for="Pannkaka">Pannkaka</label>
-                
-                        <input type="radio" id="Måne" name="uppOchNer" value="false">
-                        <label for="Måne">Måne</label>
-                
-                        <input type="radio" id="Meteor" name="uppOchNer" value="false">
-                        <label for="Meteor">Meteor</label>
-                
-                        <input type="radio" id="Solnedgång" name="uppOchNer" value="false">
-                        <label for="Solnedgång">Solnedgång</label>
-                    </div>
-                    <div class="question6">
-                        <h3>Finns det hjärterum finns det...</h3>
-
-                        <input type="radio" id="Löjtanter" name="hjärterum" value = "false">
-                        <label for="Löjtanter">Löjtanter</label>
-                
-                        <input type="radio" id="Handtag" name="hjärterum" value="false">
-                        <label for="Handtag">Handtag</label>
-                
-                        <input type="radio" id="Stjärterum" name="hjärterum" value="true">
-                        <label for="Stjärterum">Stjärterum</label>
-                
-                        <input type="radio" id="Finrum" name="hjärterum" value="false">
-                        <label for="Finrum">Finrum</label>
-                    </div>
-                    <div class="question7">
-                        <h3>Den enes död är den andres...</h3>
-
-                        <input type="radio" id="Hunger" name="död" value = "false">
-                        <label for="Hunger">Hunger</label>
-                
-                        <input type="radio" id="Sjukdom" name="död" value="false">
-                        <label for="Sjukdom">Sjukdom</label>
-                
-                        <input type="radio" id="Bröd" name="död" value="true">
-                        <label for="Bröd">Bröd</label>
-                
-                        <input type="radio" id="Lön" name="död" value="false">
-                        <label for="Lön">Lön</label>
-                    </div>
-                    <div class="question8">
-                        <h3>Ingen rök utan...</h3>
-
-                        <input type="radio" id="Vedklabbar" name="rök" value = "false">
-                        <label for="Vedklabbar">Vedklabbar</label>
-                
-                        <input type="radio" id="Eld" name="rök" value="true">
-                        <label for="Eld">Eld</label>
-                
-                        <input type="radio" id="Tänddon" name="rök" value="false">
-                        <label for="Tänddon">Tänddon</label>
-                
-                        <input type="radio" id="Tändstickor" name="rök" value="false">
-                        <label for="Tändstickor">Tändstickor</label>
-                    </div>
-                    <div class="question9">
-                        <h3>Det man inte har i huvudet får man ha i...</h3>
-
-                        <input type="radio" id="Öronen" name="huvudet" value = "false">
-                        <label for="Öronen">Öronen</label>
-                
-                        <input type="radio" id="RAM-minnet" name="huvudet" value="false">
-                        <label for="RAM-minnet">RAM-minnet</label>
-                
-                        <input type="radio" id="Benen" name="huvudet" value="true">
-                        <label for="Benen">Benen</label>
-                
-                        <input type="radio" id="Armarna" name="huvudet" value="false">
-                        <label for="Armarna">Armarna</label>
-                    </div>
-                    <div class="question10">
-                        <h3>Tala är silver, tiga är...</h3>
-
-                        <input type="radio" id="Guld" name="tala" value = "true">
-                        <label for="Guld">Guld</label>
-                
-                        <input type="radio" id="Hoppjerka" name="tala" value="false">
-                        <label for="Hoppjerka">Hoppjerka</label>
-                
-                        <input type="radio" id="Utanförskap" name="tala" value="false">
-                        <label for="Utanförskap">Utanförskap</label>
-                
-                        <input type="radio" id="Hambo" name="tala" value="false">
-                        <label for="Hambo">Hambo</label>
-                    </div>
-                    <div class="question11">
-                        <h3>Vill man vara fin får man...</h3>
-
-                        <input type="radio" id="Åka" name="fin" value = "false">
-                        <label for="Åka">Åka släde</label>
-                
-                        <input type="radio" id="huvudbonad" name="fin" value="false">
-                        <label for="huvudbonad">Bära huvudbonad</label>
-                
-                        <input type="radio" id="lida" name="fin" value="true">
-                        <label for="lida">Lida pin</label>
-                
-                        <input type="radio" id="äta" name="fin" value="false">
-                        <label for="äta">Äta med bestick</label>
-                    </div>
-                    <div class="question12">
-                        <h3>Pengar växer inte på...</h3>
-
-                        <input type="radio" id="Träd" name="pengar" value = "true">
-                        <label for="Träd">Träd</label>
-                
-                        <input type="radio" id="Huvudet" name="pengar" value="false">
-                        <label for="Huvudet">Huvudet</label>
-                
-                        <input type="radio" id="Hakan" name="pengar" value="false">
-                        <label for="Hakan">Hakan pin</label>
-                
-                        <input type="radio" id="Grannen" name="pengar" value="false">
-                        <label for="Grannen">Grannens gård</label>
-                    </div>
-                    <div class="question13">
-                        <h3>Ju fler kockar desto sämre...</h3>
-
-                        <input type="radio" id="Saltstod" name="kockar" value = "false">
-                        <label for="Saltstod">Saltstod</label>
-                
-                        <input type="radio" id="Barkbröd" name="kockar" value="false">
-                        <label for="Barkbröd">Barkbröd</label>
-                
-                        <input type="radio" id="Smak" name="kockar" value="false">
-                        <label for="Smak">Smak</label>
-                
-                        <input type="radio" id="Soppa" name="kockar" value="true">
-                        <label for="Soppa">Soppa</label>
                     </div> -->
-                    
+                    </div>
                 </fieldset>
-                <button class="done bluBbutton">Nästa fråga!</button>
+                <button class="start bluBbutton">Starta quizet!</button>
             </div>
         </div>
     </main>
