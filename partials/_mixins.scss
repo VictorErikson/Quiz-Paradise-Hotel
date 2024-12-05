@@ -16,13 +16,13 @@
       &:hover {
           background: darken(#6949fd, 10%);
           box-shadow: 0px 2px 0px 3px #260c97, -2px 5px 0px 2px #5733f8 inset;
-          transform: scale(1.1);
+          transform: scale(1.05);
           cursor: pointer;                      
           transition: transform 0.5s;
       }
       &:active {
         transform: scale(1);
-        transition: transform 0.2s;
+        transition: transform 0.5s;
         background: #6949fd;
         box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
       }

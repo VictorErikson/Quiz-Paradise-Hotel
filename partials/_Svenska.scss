@@ -30,6 +30,16 @@
 main {
     .question{
         .InstructionsContainer{
+        
+ 
+        img.symbol {
+            width: 15px;
+            height: 15px;
+            min-width: 15px;
+            position: unset;
+            transform: none;
+            padding-right: 10px;
+        }
 
                     
         img.contester{

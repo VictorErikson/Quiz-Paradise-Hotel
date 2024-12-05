@@ -96,13 +96,13 @@ main .question .btnsContainer button, main .question .btnsContainer a {
 main .question .btnsContainer button:hover, main .question .btnsContainer a:hover {
   background: #3f17fc;
   box-shadow: 0px 2px 0px 3px #260c97, -2px 5px 0px 2px #5733f8 inset;
-  transform: scale(1.1);
+  transform: scale(1.05);
   cursor: pointer;
   transition: transform 0.5s;
 }
 main .question .btnsContainer button:active, main .question .btnsContainer a:active {
   transform: scale(1);
-  transition: transform 0.2s;
+  transition: transform 0.5s;
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
 }
@@ -127,13 +127,13 @@ main .question .btnsContainer a {
 .bluBbutton:hover {
   background: #3f17fc;
   box-shadow: 0px 2px 0px 3px #260c97, -2px 5px 0px 2px #5733f8 inset;
-  transform: scale(1.1);
+  transform: scale(1.05);
   cursor: pointer;
   transition: transform 0.5s;
 }
 .bluBbutton:active {
   transform: scale(1);
-  transition: transform 0.2s;
+  transition: transform 0.5s;
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
 }
@@ -167,6 +167,8 @@ main .question .btnsContainer a {
 }
 
 main .question .InstructionsContainer {
+  display: flex;
+  flex-direction: column;
   width: 80%;
   max-width: 600px;
 }
@@ -194,6 +196,11 @@ main .question .InstructionsContainer .info .pointTime {
 main .question .InstructionsContainer .info .pointTime h2 {
   font-size: 15px;
 }
+main .question .InstructionsContainer button {
+  width: 80%;
+  max-width: 300px;
+  align-self: center;
+}
 main .question .InstructionsContainer .questions {
   border: none;
   margin: 0px;
@@ -205,6 +212,13 @@ main .question .InstructionsContainer .questions #questionContainer {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+}
+main .question .InstructionsContainer .questions #questionContainer .headlineContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 main .question .InstructionsContainer .questions #questionContainer h3 {
   font-size: 24px;
@@ -231,13 +245,13 @@ main .question .InstructionsContainer .questions #questionContainer label {
 main .question .InstructionsContainer .questions #questionContainer label:hover {
   background: #3f17fc;
   box-shadow: 0px 2px 0px 3px #260c97, -2px 5px 0px 2px #5733f8 inset;
-  transform: scale(1.1);
+  transform: scale(1.05);
   cursor: pointer;
   transition: transform 0.5s;
 }
 main .question .InstructionsContainer .questions #questionContainer label:active {
   transform: scale(1);
-  transition: transform 0.2s;
+  transition: transform 0.5s;
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
 }
@@ -275,24 +289,29 @@ main .question .InstructionsContainer .questions #questionContainer a {
 main .question .InstructionsContainer .questions #questionContainer a:hover {
   background: #3f17fc;
   box-shadow: 0px 2px 0px 3px #260c97, -2px 5px 0px 2px #5733f8 inset;
-  transform: scale(1.1);
+  transform: scale(1.05);
   cursor: pointer;
   transition: transform 0.5s;
 }
 main .question .InstructionsContainer .questions #questionContainer a:active {
   transform: scale(1);
-  transition: transform 0.2s;
+  transition: transform 0.5s;
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
 }
+main .question .InstructionsContainer .questions #questionContainer ul {
+  width: 100%;
+}
 main .question .InstructionsContainer .questions #questionContainer ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   list-style: none;
-}
-main .question .InstructionsContainer .questions #questionContainer ul li.false {
-  color: #fd4b1e;
-}
-main .question .InstructionsContainer .questions #questionContainer ul li.correct {
-  color: #1cd318;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  flex-wrap: wrap;
 }
 
 .fail {
@@ -354,6 +373,14 @@ main .question .InstructionsContainer .questions #questionContainer ul li.correc
   margin: 0px 10px;
 }
 
+main .question .InstructionsContainer img.symbol {
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  position: unset;
+  transform: none;
+  padding-right: 10px;
+}
 main .question .InstructionsContainer img.contester {
   position: unset;
   width: 200px;

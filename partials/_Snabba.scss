@@ -33,6 +33,8 @@
 main {
     .question{
         .InstructionsContainer {
+            display: flex;
+            flex-direction: column;
             width: 80%;
             max-width: 600px;
             img{
@@ -62,6 +64,12 @@ main {
                     }
                 }
             }
+
+            button {
+                width: 80%;
+                max-width: 300px;
+                align-self: center;
+            }
             .questions {
                 border: none;
                 margin: 0px;
@@ -74,6 +82,14 @@ main {
                     flex-direction: column;
                     align-items: center;
                     gap: 1.5rem;
+
+                    .headlineContainer{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
                     h3 {
                         font-size: 24px;
                         margin: 0px;
@@ -108,16 +124,19 @@ main {
                     }
 
                     ul {
+                        width: 100%;
+                        
                         li {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
                             list-style: none;
+                            text-align: left;
+                            display: flex;
+                            align-items: center;
+                            padding-right: 20px;
+                            flex-wrap: wrap;    
                         }
-                        li.false {
-                            color: #fd4b1e;
-                        }
-                        li.correct {
-                            color: #1cd318;
-                        }
-
                     }
                 }
             }

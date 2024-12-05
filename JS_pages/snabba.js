@@ -2,7 +2,7 @@ const questions = [
     {
         category: "HISTORIA",
         question: "När dog Jesus?",
-        quote: "“Vasaskeppets första seglats… Det kan ju ha varit 2005. Det var ju ett tag sedan.\" - Adrian Montin",
+        quote: "“Vasaskeppets första seglats… Det kan ju ha varit 2005. Det var ju ett tag sedan.” - Adrian Montin",
         options: [
             { id: "36", label: "År 36 e.kr", value: false },
             { id: "33", label: "År 33 e.Kr.", value: true },
@@ -14,7 +14,7 @@ const questions = [
     {
         category: "SAMHÄLLSKUNSKAP",
         question: "Hur många landskap finns det i Sverige?",
-        quote: '"Vad fan är ett landskap?" - Saga Scott',
+        quote: "“Vad fan är ett landskap?” - Saga Scott",
         options: [
             { id: "22", label: "22", value: false },
             { id: "25", label: "25", value: true },
@@ -26,7 +26,7 @@ const questions = [
     {
         category: "GEOGRAFI",
         question: "Var ligger Markusplatsen?",
-        quote: '"Jag är jude. Eller jag vill vara jude. Eller jag har varit mycket hemma hos en kompis som är jude" - Oliver Strige',
+        quote: "“Jag är jude. Eller jag vill vara jude. Eller jag har varit mycket hemma hos en kompis som är jude” - Oliver Strige",
         options: [
             { id: "copenhagen", label: "Köpenhamn, Danmark", value: false },
             { id: "berlin", label: "Berlin, Tyskland", value: false },
@@ -38,7 +38,7 @@ const questions = [
     {
         category: "HISTORIA",
         question: "När blev Gustav Vasa kung?",
-        quote: "\"Jag har lärt mig att spanjorerna inte utrotade enhörningarna\" - Paulina \"Paow\" Danielsson",
+        quote: "“Jag har lärt mig att spanjorerna inte utrotade enhörningarna” - Paulina “Paow” Danielsson",
         options: [
             { id: "1631", label: "1631", value: false },
             { id: "1571", label: "1571", value: false },
@@ -50,7 +50,7 @@ const questions = [
     {
         category: "SAMHÄLLSKUNSKAP",
         question: "Stefan Löfven blev partiordförande för Centerpartiet 2014?",
-        quote: "\"Jag tycker att bevisen för att sjöjungfrur finns är solklara\" - Saga Scott",
+        quote: "“Jag tycker att bevisen för att sjöjungfrur finns är solklara” - Saga Scott",
         options: [
             { id: "stefanSant", label: "Sant", value: false },
             { id: "stefanFalskt", label: "Falskt", value: true }
@@ -60,7 +60,7 @@ const questions = [
     {
         category: "HISTORIA",
         question: "När skedde slaget vid Hastings?",
-        quote: "\"Det skulle vara coolt om en fågel skulle para sig med en zebra. Fast förmodligen skulle zebrans snopp döda fågeln\" - Frida Westman",
+        quote: "“Det skulle vara coolt om en fågel skulle para sig med en zebra. Fast förmodligen skulle zebrans snopp döda fågeln” - Frida Westman",
         options: [
             { id: "1902", label: "År 1902", value: false },
             { id: "1789", label: "År 1789", value: false },
@@ -72,7 +72,7 @@ const questions = [
     {
         category: "HISTORIA",
         question: "När skiljdes Svenska kyrkan från staten?",
-        quote: "\"En ko har väl tre-fyra hjärtan?\" - Smail Alihodzic",
+        quote: "“En ko har väl tre-fyra hjärtan?” - Smail Alihodzic",
         options: [
             { id: "1874", label: "År 1874", value: false },
             { id: "1791", label: "År 1791", value: false },
@@ -84,7 +84,7 @@ const questions = [
     {
         category: "GEOGRAFI",
         question: "Var ligger Akropolis?",
-        quote: "\"Det finns väl två olika Afrika?\" - Josefine Caarle",
+        quote: "“Det finns väl två olika Afrika?” - Josefine Caarle",
         options: [
             { id: "rom", label: "Rom, Italien", value: false },
             { id: "aten", label: "Aten, Grekland", value: true },
@@ -96,7 +96,7 @@ const questions = [
     {
         category: "SAMHÄLLSKUNSKAP",
         question: "Sverige är en republik?",
-        quote: "\"Antiklimax, det är väl sån här insektsutrotning\" - Adam Lökholm",
+        quote: "“Antiklimax, det är väl sån här insektsutrotning” - Adam Lökholm",
         options: [
             { id: "republikTrue", label: "Sant", value: false },
             { id: "republicFalse", label: "Falskt", value: true }
@@ -106,7 +106,7 @@ const questions = [
     {
         category: "HISTORIA",
         question: "När blev Carl XVI Gustaf kung?",
-        quote: "\"Första mannen på månen. Var det typ på 1500-talet eller ännu längre tillbaka?\" - Josefine Caarle",
+        quote: "“Första mannen på månen. Var det typ på 1500-talet eller ännu längre tillbaka?” - Josefine Caarle",
         options: [
             { id: "1971", label: "1971", value: false },
             { id: "1980", label: "1980", value: false },
@@ -116,6 +116,7 @@ const questions = [
         name: "kungen"
     }
 ];
+
 
 
 const nextBtn = document.querySelector(".next")
@@ -159,7 +160,7 @@ const finnished = (reason) => {
     
     const result = () => {
         questionCount.remove();
-        quote.innerText = '"För två år sedan kände att jag ville göra något annorlunda. Så då tog jag bort min förhud. Nu ligger den i min pappas frys" - Alexander Wigren';
+        quote.innerText = '“För två år sedan kände att jag ville göra något annorlunda. Så då tog jag bort min förhud. Nu ligger den i min pappas frys” - Alexander Wigren';
         questionContainer.innerHTML = ""
         const msg = document.createElement("h2");
         const resultsUl = document.createElement("ul");
@@ -205,10 +206,10 @@ const finnished = (reason) => {
         questionContainer.innerHTML = ""
         const timesUp = document.createElement("h2");
         questionContainer.append(timesUp);
-        timesUp.innerText = "Ops, du fick slut på tid!"
+        timesUp.innerText = "Oups, du fick slut på tid!"
         timer.classList.add("fail")
 
-        setTimeout(result, 4000);
+        setTimeout(result, 2000);
     }else{
         result();
     }
@@ -229,11 +230,11 @@ const handleChoice = (answer, questionObj) => {
                 quote.innerText = questions[currentQuestionIndex].quote;
                 questionNmbr ++;
                 questionCount.innerText = `Fråga ${questionNmbr} - ${questions[currentQuestionIndex].category}`
-                displayQuestion(currentQuestionIndex);}, 2000);
+                displayQuestion(currentQuestionIndex);}, 1000);
                 
                 
             }else {
-                setTimeout(finnished, 2000);
+                setTimeout(finnished, 1000);
             }
         }
         
@@ -247,7 +248,7 @@ const handleChoice = (answer, questionObj) => {
         questionContainer.insertBefore(warning, questionContainer.firstChild)
 
         questionContainer.style.pointerEvents = "none";
-        setTimeout(() => {questionContainer.style.pointerEvents = "auto";}, 4000)
+        setTimeout(() => {questionContainer.style.pointerEvents = "auto";}, 2000)
 
         setTimeout(() => {
             questionContainer.removeChild(questionContainer.firstChild);
@@ -258,9 +259,9 @@ const handleChoice = (answer, questionObj) => {
                     questionCount.innerText = `Fråga ${questionNmbr}`
                     displayQuestion(currentQuestionIndex);    
                 }else {
-                    setTimeout(finnished, 2000);
+                    setTimeout(finnished, 1000);
                 }
-            }, 4000);
+            }, 2000);
 
 
         } else {
@@ -290,7 +291,7 @@ const displayQuestion = (index) => {
             };
             const grandparent = event.target.parentElement?.parentElement;
             grandparent.style.pointerEvents = "none";
-            setTimeout(() => {grandparent.style.pointerEvents = "auto";}, 2000)
+            setTimeout(() => {grandparent.style.pointerEvents = "auto";}, 1000)
             
             
             const sibling = event.target.nextElementSibling;

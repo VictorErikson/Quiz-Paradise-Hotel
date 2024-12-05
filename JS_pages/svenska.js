@@ -63,7 +63,7 @@ const questions = [
             { id: "Finrum", label: "Finrum", value: false }
         ],
         name: "hjärterum",
-        quote: "**'Vem var den där kung Ludvig då? Var det han som blev manglad?' - Calle Åberg**"
+        quote: '“Vem var den där kung Ludvig då? Var det han som blev manglad?” - Calle Åberg'
     },
     {
         question: "Den enes död är den andres...",
@@ -153,9 +153,19 @@ let currentQuestionIndex = 0;
 const results = [];
 let score = 0;
 let questionNmbr = 1;
-let countdownTime = 2 * 6;
+let countdownTime = 2 * 60;
 let warningTriggered = false;
 let interval;
+
+const correctAnswers = [];
+
+questions.forEach(question => {
+    question.options.forEach(option => {
+        if (option.value === true){
+            correctAnswers.push(option);
+        }
+    })
+})
 
 const startQuiz = () => {
 
@@ -210,12 +220,38 @@ const finnished = (reason) => {
         matte.src = "../assets/images/matte.png";
         matte.classList.add("contester")
         const resultsUl = document.createElement("ul");
-        questionContainer.append(resultsUl, msg, matte);
 
-        results.forEach(question => {
+        const headlineQuestions = document.createElement("h2");
+        const headlineAnswers = document.createElement("h2");
+        headlineQuestions.classList.add("headline");
+        headlineAnswers.classList.add("headline");
+        const headlineContainer = document.createElement("div");
+        headlineContainer.classList.add("headlineContainer");
+        headlineQuestions.innerText = "Frågor";
+        headlineAnswers.innerText = "Rätt svar";
+
+        headlineContainer.append(headlineQuestions, headlineAnswers);
+        questionContainer.append(msg, matte,headlineContainer, resultsUl);
+
+        results.forEach((question, i) => {
             const resultLi = document.createElement("li");
-            resultLi.innerText = `${question.question}: ${question.answer.answer}`
-            question.answer.value === "true" ? resultLi.classList.add("correct") :resultLi.classList.add("false");
+            const questionSpan = document.createElement("span");
+            const answerSpan = document.createElement("span");
+
+            const symbol = document.createElement("img");
+
+            resultLi.append(questionSpan, answerSpan);
+            symbol.classList.add("symbol");
+
+            questionSpan.innerText = `${i + 1}. ${question.question}`;
+
+            const answer = `${correctAnswers[i].label}`.toLowerCase();
+            const formattedAnswer = answer.charAt(0).toUpperCase() + answer.slice(1);
+            answerSpan.innerText = formattedAnswer;
+            
+            question.answer.value === "true" ? symbol.src = "../assets/symbols/true.png" : symbol.src = "../assets/symbols/false.png";
+            
+            questionSpan.prepend(symbol);
             resultsUl.append(resultLi);
         })
 
@@ -225,16 +261,16 @@ const finnished = (reason) => {
 
         const lost = () => {
 
-            if (score > 5){
+            if (score > 6){
                 msg.innerText = 'Du och Matte är som ler och långhalm! Exakt lika "smarta".';
                 questionContainer.append(restartBtn);
             } else {
-                msg.innerText = "Du är tyvärr inte riktigt lika klipskt som Matte..."
+                msg.innerText = "Du är tyvärr inte RIKTIGT lika klipskt som Matte..."
                 const apply = document.createElement("a");
                 apply.innerText = "Ansök nu!";
                 apply.href = "https://shortaudition.com/paradise_hotel_2025";
                 apply.classList.add("apply");
-                questionContainer.append(apply);
+                questionContainer.insertBefore(apply, questionContainer.children[2]);
             }
         }
         const won = () => {
@@ -243,7 +279,7 @@ const finnished = (reason) => {
 
         }
 
-        if (score > 7){won()}
+        if (score > 8){won()}
         else lost()
     }
 
@@ -252,10 +288,10 @@ const finnished = (reason) => {
         questionContainer.innerHTML = ""
         const timesUp = document.createElement("h2");
         questionContainer.append(timesUp);
-        timesUp.innerText = "Ops, du fick slut på tid!"
+        timesUp.innerText = "Oups, du fick slut på tid!"
         timer.classList.add("fail")
 
-        setTimeout(result, 4000);
+        setTimeout(result, 2000);
     }else{
         result();
     }
@@ -268,7 +304,7 @@ const handleChoice = (answer, questionObj) => {
     const question =  questionObj.question;
     results.push({question, answer});
     score = results.filter(object => object.answer.value === "true").length;
-    points.innerText = `Poäng: ${score}/10`
+    points.innerText = `Poäng: ${score}/12`
     const misstakes = results.filter(object => object.answer.value === "false").length;
 
     
@@ -278,11 +314,11 @@ const handleChoice = (answer, questionObj) => {
                 quote.innerText = questions[currentQuestionIndex].quote;
                 questionNmbr ++;
                 questionCount.innerText = `Fråga ${questionNmbr} - ${questions[currentQuestionIndex].category}`
-                displayQuestion(currentQuestionIndex);}, 2000);
+                displayQuestion(currentQuestionIndex);}, 1000);
                 
                 
             }else {
-                setTimeout(finnished, 2000);
+                setTimeout(finnished, 1000);
                 clearInterval(interval);
             }
         }
@@ -297,7 +333,7 @@ const handleChoice = (answer, questionObj) => {
         questionContainer.insertBefore(warning, questionContainer.firstChild)
 
         questionContainer.style.pointerEvents = "none";
-        setTimeout(() => {questionContainer.style.pointerEvents = "auto";}, 4000)
+        setTimeout(() => {questionContainer.style.pointerEvents = "auto";}, 2000)
 
         setTimeout(() => {
             questionContainer.removeChild(questionContainer.firstChild);
@@ -308,9 +344,9 @@ const handleChoice = (answer, questionObj) => {
                     questionCount.innerText = `Fråga ${questionNmbr}`
                     displayQuestion(currentQuestionIndex);    
                 }else {
-                    setTimeout(finnished, 2000);
+                    setTimeout(finnished, 1000);
                 }
-            }, 4000);
+            }, 2000);
 
 
         } else {
@@ -345,7 +381,7 @@ const displayQuestion = (index) => {
             };
             const grandparent = event.target.parentElement?.parentElement;
             grandparent.style.pointerEvents = "none";
-            setTimeout(() => {grandparent.style.pointerEvents = "auto";}, 2000)
+            setTimeout(() => {grandparent.style.pointerEvents = "auto";}, 1000)
             
             
             const sibling = event.target.nextElementSibling;
