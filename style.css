@@ -166,6 +166,37 @@ main .question .btnsContainer a {
   margin: 0px 10px;
 }
 
+main .question a {
+  width: 100%;
+  background: #6949fd;
+  box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: none;
+  margin: 0px;
+  text-transform: uppercase;
+  font-family: "Parkinsans", sans-serif;
+  width: 80%;
+  text-decoration: none;
+  max-width: 300px;
+  text-align: center;
+}
+main .question a:hover {
+  background: #3f17fc;
+  box-shadow: 0px 2px 0px 3px #260c97, -2px 5px 0px 2px #5733f8 inset;
+  transform: scale(1.05);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+main .question a:active {
+  transform: scale(1);
+  transition: transform 0.5s;
+  background: #6949fd;
+  box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
+}
 main .question .InstructionsContainer {
   display: flex;
   flex-direction: column;
@@ -268,37 +299,6 @@ main .question .InstructionsContainer .questions #questionContainer input {
   opacity: 0;
   pointer-events: none;
 }
-main .question .InstructionsContainer .questions #questionContainer a {
-  width: 100%;
-  background: #6949fd;
-  box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
-  color: white;
-  font-size: 24px;
-  font-weight: 700;
-  padding: 10px 20px;
-  border-radius: 15px;
-  border: none;
-  margin: 0px;
-  text-transform: uppercase;
-  font-family: "Parkinsans", sans-serif;
-  width: 80%;
-  text-decoration: none;
-  max-width: 300px;
-  text-align: center;
-}
-main .question .InstructionsContainer .questions #questionContainer a:hover {
-  background: #3f17fc;
-  box-shadow: 0px 2px 0px 3px #260c97, -2px 5px 0px 2px #5733f8 inset;
-  transform: scale(1.05);
-  cursor: pointer;
-  transition: transform 0.5s;
-}
-main .question .InstructionsContainer .questions #questionContainer a:active {
-  transform: scale(1);
-  transition: transform 0.5s;
-  background: #6949fd;
-  box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
-}
 main .question .InstructionsContainer .questions #questionContainer ul {
   width: 100%;
 }
@@ -347,6 +347,93 @@ main .question .InstructionsContainer .questions #questionContainer ul li {
 .headingHemkunskap .right .modeSwitch img {
   width: 25px;
   margin: 0px 10px;
+}
+
+main .question .InstructionsContainer.hemkunskap .info {
+  flex-direction: column;
+  height: auto;
+}
+main .question .InstructionsContainer.hemkunskap .info .pointTime {
+  align-self: flex-start;
+}
+main .question .InstructionsContainer.hemkunskap .info .contester {
+  min-width: 350px;
+}
+main .question .InstructionsContainer.hemkunskap .info .apply {
+  margin-bottom: 20px;
+}
+main .question .InstructionsContainer.hemkunskap .choices {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 60px;
+  border-bottom: white 1px solid;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer .dishContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 40px;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer .dishContainer:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer .dishContainer button {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer .dishContainer button img {
+  position: unset;
+  max-width: 20px;
+  width: 20px;
+  height: 20px;
+  transform: none;
+  min-width: unset;
+  padding-bottom: 5px;
+  opacity: 30%;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer .dishContainer button img:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer ul {
+  display: flex;
+  flex-direction: column;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer .falseCategory {
+  align-self: flex-end;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer .falseCategory .falseBtn {
+  display: none;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer .falseCategory .trueBtn {
+  display: block;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer .trueCategory {
+  align-self: flex-start;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer .trueCategory .trueBtn {
+  display: none;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer .trueCategory .falseBtn {
+  display: block;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer.results {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+main .question .InstructionsContainer.hemkunskap {
+  max-width: 800px;
+}
+main .question .InstructionsContainer.hemkunskap #questionContainer {
+  padding: 20px 0px;
+}
+main .question .InstructionsContainer.hemkunskap .inactive {
+  pointer-events: none;
+  opacity: 50%;
 }
 
 .headingSvenska {

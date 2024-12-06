@@ -157,15 +157,9 @@ let countdownTime = 2 * 60;
 let warningTriggered = false;
 let interval;
 
-const correctAnswers = [];
 
-questions.forEach(question => {
-    question.options.forEach(option => {
-        if (option.value === true){
-            correctAnswers.push(option);
-        }
-    })
-})
+
+
 
 const startQuiz = () => {
 
@@ -207,7 +201,7 @@ const startQuiz = () => {
 const finnished = (reason) => {
     const questionCount = document.querySelector(".questionCount");
     const timer = document.querySelector(".time");
-    const pointTime = document.querySelector(".pointTime");
+
 
     const result = () => {
         
@@ -233,7 +227,20 @@ const finnished = (reason) => {
         headlineContainer.append(headlineQuestions, headlineAnswers);
         questionContainer.append(msg, matte,headlineContainer, resultsUl);
 
-        results.forEach((question, i) => {
+
+        const correctAnswers = [];
+
+        questions.forEach(question => {
+            question.options.forEach(option => {
+                if (option.value === true){
+                    correctAnswers.push(option);
+                }
+            })
+        })
+
+
+
+        questions.forEach((question, i) => {
             const resultLi = document.createElement("li");
             const questionSpan = document.createElement("span");
             const answerSpan = document.createElement("span");
@@ -245,15 +252,22 @@ const finnished = (reason) => {
 
             questionSpan.innerText = `${i + 1}. ${question.question}`;
 
-            const answer = `${correctAnswers[i].label}`.toLowerCase();
-            const formattedAnswer = answer.charAt(0).toUpperCase() + answer.slice(1);
+            const correctAnswer = `${correctAnswers[i].label}`.toLowerCase();
+            const formattedAnswer = correctAnswer.charAt(0).toUpperCase() + correctAnswer.slice(1);
             answerSpan.innerText = formattedAnswer;
-            
-            question.answer.value === "true" ? symbol.src = "../assets/symbols/true.png" : symbol.src = "../assets/symbols/false.png";
-            
+
             questionSpan.prepend(symbol);
             resultsUl.append(resultLi);
+
+            if (results.find(element => element.question === question.question && element.answer.value === "true")){
+                symbol.src = "../assets/symbols/true.png"
+
+            } else symbol.src = "../assets/symbols/false.png";
+            
+ 
+
         })
+
 
         const restartBtn = document.createElement("a")
         restartBtn.innerText = "Försök igen"

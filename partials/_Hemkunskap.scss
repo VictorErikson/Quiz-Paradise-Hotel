@@ -33,3 +33,124 @@
     flex-wrap: wrap;
 }
 
+main {
+    .question {
+        .InstructionsContainer.hemkunskap {
+
+            .info {
+                flex-direction: column;
+                height: auto;
+
+                .pointTime {
+                    align-self: flex-start;
+                }
+                .contester {
+                    min-width: 350px;
+                }
+                .apply {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .choices {
+                display: flex;
+                justify-content: space-between;
+                padding: 0px 60px;
+                border-bottom: white 1px solid;
+            }
+
+            #questionContainer {
+
+                .dishContainer{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 0px 40px;
+
+                    
+                    &:hover {
+                        transform: scale(1.1); 
+                        transition: transform 0.2s ease;
+                    }
+                    button {
+                        background: none;
+                        border: none;
+                        width: 40px;
+                        height: 40px;
+                        
+                        
+                        
+
+                        img {
+                            position: unset;
+                            max-width: 20px;
+                            width: 20px;
+                            height: 20px;
+                            transform: none;
+                            min-width: unset;
+                            padding-bottom: 5px;
+                            opacity: (30%);
+
+                            &:hover {
+                                opacity: (100%);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .falseCategory {
+                    align-self: flex-end;
+
+                    .falseBtn {
+                        display: none;
+                    }
+                    .trueBtn {
+                        display: block;
+                    }
+                }
+                .trueCategory {
+                    align-self: flex-start;
+
+                    .trueBtn {
+                        display: none;
+                    }
+
+                    .falseBtn {
+                        display: block;
+                    }
+                }
+            }
+
+            #questionContainer.results {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+        }
+    }
+}
+
+main {
+    .question {
+        .InstructionsContainer.hemkunskap {
+            max-width: 800px;
+
+            #questionContainer {
+                padding: 20px 0px;
+            }
+
+            .inactive {
+                pointer-events: none;
+                opacity: 50%;
+            
+            }
+        }
+    }
+}

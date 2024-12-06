@@ -160,18 +160,61 @@ const finnished = (reason) => {
     
     const result = () => {
         questionCount.remove();
-        quote.innerText = '“För två år sedan kände att jag ville göra något annorlunda. Så då tog jag bort min förhud. Nu ligger den i min pappas frys” - Alexander Wigren';
+        quote.innerText = '“För två år sedan kände jag att jag ville göra något annorlunda. Så då tog jag bort min förhud. Nu ligger den i min pappas frys” - Alexander Wigren';
         questionContainer.innerHTML = ""
         const msg = document.createElement("h2");
         const resultsUl = document.createElement("ul");
-        questionContainer.append(resultsUl, msg);
 
-        results.forEach(question => {
-            const resultLi = document.createElement("li");
-            resultLi.innerText = `${question.question}: ${question.answer.answer}`
-            question.answer.value === "true" ? resultLi.classList.add("correct") :resultLi.classList.add("false");
-            resultsUl.append(resultLi);
+        const headlineQuestions = document.createElement("h2");
+        const headlineAnswers = document.createElement("h2");
+        headlineQuestions.classList.add("headline");
+        headlineAnswers.classList.add("headline");
+        const headlineContainer = document.createElement("div");
+        headlineContainer.classList.add("headlineContainer");
+        headlineQuestions.innerText = "Frågor";
+        headlineAnswers.innerText = "Rätt svar";
+
+        headlineContainer.append(headlineQuestions, headlineAnswers);
+        questionContainer.append(msg,headlineContainer, resultsUl);
+
+        const correctAnswers = [];
+
+        questions.forEach(question => {
+            question.options.forEach(option => {
+                if (option.value === true){
+                    correctAnswers.push(option);
+                }
+            })
         })
+
+
+
+        questions.forEach((question, i) => {
+            const resultLi = document.createElement("li");
+            const questionSpan = document.createElement("span");
+            const answerSpan = document.createElement("span");
+
+            const symbol = document.createElement("img");
+
+            resultLi.append(questionSpan, answerSpan);
+            symbol.classList.add("symbol");
+
+            questionSpan.innerText = `${i + 1}. ${question.question}`;
+
+            const correctAnswer = `${correctAnswers[i].label}`.toLowerCase();
+            const formattedAnswer = correctAnswer.charAt(0).toUpperCase() + correctAnswer.slice(1);
+            answerSpan.innerText = formattedAnswer;
+
+            questionSpan.prepend(symbol);
+            resultsUl.append(resultLi);
+
+            if (results.find(element => element.question === question.question && element.answer.value === "true")){
+                symbol.src = "../assets/symbols/true.png"
+
+            } else symbol.src = "../assets/symbols/false.png";
+            
+        })
+
 
         const restartBtn = document.createElement("a")
         restartBtn.innerText = "Försök igen"
@@ -188,7 +231,7 @@ const finnished = (reason) => {
                 apply.innerText = "Ansök nu!";
                 apply.href = "https://shortaudition.com/paradise_hotel_2025";
                 apply.classList.add("apply");
-                questionContainer.append(apply);
+                questionContainer.insertBefore(apply, questionContainer.children[1]);
             }
         }
         const won = () => {
@@ -235,6 +278,7 @@ const handleChoice = (answer, questionObj) => {
                 
             }else {
                 setTimeout(finnished, 1000);
+                clearInterval(interval);
             }
         }
         
