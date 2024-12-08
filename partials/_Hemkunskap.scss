@@ -131,6 +131,10 @@ main {
             #questionContainer.results {
                 flex-direction: row;
                 align-items: flex-start;
+
+                .falseCategory {
+                    align-self: flex-start;
+                }
             }
 
         }

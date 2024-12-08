@@ -45,7 +45,6 @@ const instructions = document.querySelector(".instructions")
 const inTruesCategory = [];
 const inFalsesCategory = [];
 const correctAnswers = [];
-const points = correctAnswers.length;
 
 
 const updateDoneBtn = () => {
@@ -96,10 +95,8 @@ foodOptions.forEach(foodOption => {
             inTruesCategory.splice(inTruesCategory.indexOf(foodOption), 1);
         }
         
-        updateDoneBtn();
-        questionContainer.style.flexDirection = ("row");
-        questionContainer.style.alignItems = ("flex-start");
-
+        updateDoneBtn()
+            
     })
         
 })
@@ -107,14 +104,6 @@ foodOptions.forEach(foodOption => {
 
 
 doneBtn.addEventListener("click", () => {
-    inTruesCategory.forEach(dish => {
-        if (dish.value === true) correctAnswers.push(dish);
-    })
-    inFalsesCategory.forEach(dish => {
-        if (dish.value === false) correctAnswers.push(dish);
-    })
-
-    
     finnished();
     clearInterval(interval);
 })
@@ -143,12 +132,24 @@ updateTimer();
 
 
 const finnished = (reason) => {
+
+    inTruesCategory.forEach(dish => {
+        if (dish.value === true) correctAnswers.push(dish);
+    })
+    inFalsesCategory.forEach(dish => {
+        if (dish.value === false) correctAnswers.push(dish);
+    })
+
+    const points = correctAnswers.length;
     const timer = document.querySelector(".time");
+    questionContainer.classList.add("results");
 
-
+    const pointTime = document.querySelector(".pointTime");
+    instructions.remove();
+    doneBtn.remove();
+    
     const result = () => {
         
-
         quote.innerText = '“Hon är så dum att kossorna somnar” - Olinda Borggren';
         questionContainer.innerHTML = ""
         const msg = document.createElement("h2");
@@ -157,8 +158,11 @@ const finnished = (reason) => {
         diegoDiana.classList.add("contester")
         const resultsTrueUl = document.createElement("ul");
         const resultsFalseUl = document.createElement("ul");
-        instructions.remove();
-        doneBtn.remove();
+
+        pointsPrint = document.createElement("h2");
+        pointTime.append(pointsPrint);
+        pointsPrint.innerText = `Poäng: ${points}/24`;
+        
 
         infoContainer.append(msg, diegoDiana);
         questionContainer.append(resultsTrueUl, resultsFalseUl);
@@ -168,6 +172,7 @@ const finnished = (reason) => {
 
             const resultLi = document.createElement("li");
             const symbol = document.createElement("img");
+           
 
             symbol.classList.add("symbol");
 
@@ -182,7 +187,7 @@ const finnished = (reason) => {
                 resultsTrueUl.append(resultLi);
             }; 
            
-
+            resultLi.prepend(symbol);
             
 
 
@@ -195,9 +200,9 @@ const finnished = (reason) => {
 
         const lost = () => {
 
-            if (points >= (foodOptions.length * 0.5).floor){
+            if (points >= Math.floor(foodOptions.length * 0.5)){
                 msg.innerText = 'Du Diana och Diego är sannerligen en kompatibel trio! Exakt lika "klipska" alla tre.';
-                questionContainer.append(restartBtn);
+                infoContainer.append(restartBtn);
             } else {
                 msg.innerText = "Du är tyvärr inte RIKTIGT lika klipskt som Diana och Diego..."
                 const apply = document.createElement("a");
@@ -208,24 +213,33 @@ const finnished = (reason) => {
             }
         }
         const won = () => {
-            questionContainer.append(restartBtn);
+            infoContainer.append(restartBtn);
             msg.innerText = 'Du är något klipskare än Diana och Diego, snyggt jobbat...'
 
         }
 
-        if (points >= (foodOptions.length * 0.75).floor){won()}
+        if (points >= Math.floor(foodOptions.length * 0.75)){won()}
         else lost()
     }
 
     if (reason === "timeout"){
-        questionCount.remove();
         questionContainer.innerHTML = ""
         const timesUp = document.createElement("h2");
         questionContainer.append(timesUp);
         timesUp.innerText = "Oups, du fick slut på tid!"
         timer.classList.add("fail")
 
-        setTimeout(result, 2000);
+        const choices =  document.querySelector(".choices");
+        choices.style.display = "none";
+
+        const showChoices = () => {
+            choices.style.display = "";
+        }
+        setTimeout(() => {
+            result();
+            showChoices();
+            }, 3000);
+        // setTimeout(result, 4000);
     }else{
         result();
     }
