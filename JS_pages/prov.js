@@ -1,0 +1,23 @@
+const questions = [
+    { question: "Isbjörnar har svart hud", answer: "Sant" },
+    { question: "På 1300-talet hade människan 5 fingrar på varje hand", answer: "Sant" },
+    { question: "Solen kretsar kring jorden", answer: "Falskt" },
+    { question: "Människan och giraffen har lika många halskotor", answer: "Sant" },
+    { question: "Brott mot jantelagen kan ge 15 års fängelse", answer: "Falskt" },
+    { question: "1kg järn väger mer än 1kg bomull", answer: "Falskt" },
+    { question: "Det finns pyramider i Mexico", answer: "Sant" },
+    { question: "Eftersom jorden roterar står flygplan stilla i luften", answer: "Falskt" },
+    { question: "Om en bil kör 100km/h tar den sig 10 mil på en timme", answer: "Sant" },
+    { question: "Pelikaner finns på riktigt", answer: "Sant" },
+    { question: "Man får håriga handflator av onani", answer: "Falskt" },
+    { question: "Brasilien har vunnit guld i fotbolls-EM 5 gånger", answer: "Falskt" },
+    { question: "En donut är en engelsk präst", answer: "Falskt" },
+    { question: "Sverige har aldrig haft en kvinnlig statsminister", answer: "Falskt" },
+    { question: "Det är blod i blodpudding", answer: "Sant" },
+    { question: "Dinosaurierna dog för att de missade Noaks Ark", answer: "Falskt" },
+    { question: "Robinson Crusoe upptäckte Amerika", answer: "Falskt" },
+    { question: "Man mäter pH-värde med lackmustest", answer: "Sant" },
+    { question: "Gräver man rakt ner i Sverige kommer man alltid till Kina", answer: "Falskt" },
+    { question: "Huden är kroppens största organ", answer: "Sant" },
+    { question: "Europa är ett land", answer: "Falskt" }
+];
