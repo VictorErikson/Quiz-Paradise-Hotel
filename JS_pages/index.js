@@ -12,6 +12,8 @@ const setMode = () => {
         if (nightOrDayMode === "dayMode"){
             sun.src = "../assets/symbols/sunny_yellow.png" 
             moon.src = "../assets/symbols/mode_night_grey.png"
+
+
             soundSymbol.src = "../assets/symbols/volume_up_black.svg"
         }else {
             sun.src = "../assets/symbols/sunny_grey.png" 
@@ -19,10 +21,11 @@ const setMode = () => {
             soundSymbol.src = "../assets/symbols/volume_up_white.svg"
         };
     }
-
-
-
     
+}
+
+const setVolume = () => {
+    const volume = localStorage.getItem("volume");
 }
 
 const modeSwitching = () => {
@@ -31,6 +34,7 @@ const modeSwitching = () => {
 }
 
 modeSwitch.addEventListener("click", modeSwitching);
+soundSymbol.addEventListener("click", toggleSound);
 
 setMode();
 
@@ -46,4 +50,3 @@ setMode();
 //     }
 // }
 
-// soundSymbol.addEventListener("click", toggleSound);
