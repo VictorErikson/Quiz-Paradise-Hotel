@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Är du smartare än en Paradise-deltagare? - Svenska</title>
     <link rel="stylesheet" href="../style.css" />
+    <script src="../JS_Pages/index.js" defer></script>
     <script src="../JS_Pages/svenska.js" type="module" defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Parkinsans&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
@@ -17,11 +18,13 @@
             
         </div>
         <div class="right">
-            <button class="switchMusic"><img src="../assets/symbols/volume_on.svg" alt="turnOffMusic"></button>
+            <button class="switchMusic"><img class="soundSymbol" src="../assets/symbols/volume_up_white.svg" alt="turnOffMusic"></button>
             <div class="modeSwitch">
-                <img src="../assets/symbols/sunny_yellow.png" alt="sun">
-                <button id="modeSwitch">rundBoll</button>
-                <img src="../assets/symbols/mode_night_grey.png" alt="moon">
+                <img class="sun" src="../assets/symbols/sunny_grey.png" alt="sun">
+                <button class="modeBtn">
+                    <div id="modeSwitch"></div>
+                </button>
+                <img class="moon" src="../assets/symbols/mode_night_yellow.png" alt="moon">
             </div>
         </div>
     </header>

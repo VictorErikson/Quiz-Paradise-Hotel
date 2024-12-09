@@ -222,7 +222,7 @@ const finnished = (reason) => {
 
         const lost = () => {
 
-            if (score > 5){
+            if (score >= Math.floor(questions.length * 0.5)){
                 msg.innerText = "Du är en person som gärna klär dig minimalt, ofta tänker syndiga tankar och är hetast på stadens nattklubb. Du har faktist alla attribut och kunskaper det krävs för att medverka i en klassisk Paradise Hotel säsong."
                 questionContainer.append(restartBtn);
             } else {
@@ -240,7 +240,7 @@ const finnished = (reason) => {
 
         }
 
-        if (score > 7){won()}
+        if (score > Math.floor(questions.length * 0.75)){won()}
         else lost()
     }
 

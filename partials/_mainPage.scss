@@ -16,7 +16,10 @@ body {
 }
 
 body.dayMode {
+    background-image: url("../assets/images/backgroundDay.svg");
+    color: black;
     header {
+        
         .modeSwitch {
             .modeBtn {
                 justify-content: flex-start;
@@ -26,6 +29,20 @@ body.dayMode {
                     background: black;
                 }
             }
+        }
+    }
+    main {
+        .question {
+            .InstructionsContainer {
+                background: linear-gradient(to top, rgba(255, 183, 0, 0.89), rgba(255, 248, 212, 0.493));
+                // background: linear-gradient(to bottom, rgba(255, 237, 240, 0.6), rgba(252, 17, 0, 0.6));
+            }
+            // .btnsContainer {
+            //     button, a{
+            //         @include btnLightPurple()
+
+            //     }
+            // }
         }
     }
 }
@@ -94,12 +111,6 @@ main {
     .quote {
         margin-bottom: 140px;
         font-size: 20px;
-        // span {
-        //     font-size: 25px;
-        // }
-        // .participant {
-        //     font-size: 15px;
-        // }
     }
 
     .question {

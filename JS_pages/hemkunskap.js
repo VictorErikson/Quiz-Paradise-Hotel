@@ -218,7 +218,7 @@ const finnished = (reason) => {
 
         }
 
-        if (points >= Math.floor(foodOptions.length * 0.75)){won()}
+        if (points > Math.floor(foodOptions.length * 0.75)){won()}
         else lost()
     }
 
@@ -243,4 +243,12 @@ const finnished = (reason) => {
     }else{
         result();
     }
+}
+
+if (document.body.classList.contains("dayMode")){
+    document.querySelectorAll(".trueBtn").forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_back_black.png");
+    document.querySelectorAll(".falseBtn").forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_forward_black.png");
+} else {
+    document.querySelectorAll(".trueBtn").forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_back_white.png");
+    document.querySelectorAll(".falseBtn").forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_forward_white.png");
 }

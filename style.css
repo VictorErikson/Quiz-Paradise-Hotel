@@ -12,6 +12,10 @@ body {
   flex-direction: column;
 }
 
+body.dayMode {
+  background-image: url("../assets/images/backgroundDay.svg");
+  color: black;
+}
 body.dayMode header .modeSwitch .modeBtn {
   justify-content: flex-start;
   border: black 2px solid;
@@ -19,6 +23,9 @@ body.dayMode header .modeSwitch .modeBtn {
 }
 body.dayMode header .modeSwitch .modeBtn #modeSwitch {
   background: black;
+}
+body.dayMode main .question .InstructionsContainer {
+  background: linear-gradient(to top, rgba(255, 183, 0, 0.89), rgba(255, 248, 212, 0.493));
 }
 
 header {
@@ -136,6 +143,19 @@ main .question .btnsContainer button:active, main .question .btnsContainer a:act
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
 }
+body.dayMode main .question .btnsContainer button, body.dayMode main .question .btnsContainer a {
+  background: #ffd700; /* Example of alternate styling */
+  color: #000; /* Text color for day mode */
+  box-shadow: 0px 2px 0px 3px #f3a033, -2px 5px 0px 2px #fdd835 inset;
+}
+body.dayMode main .question .btnsContainer button:hover, body.dayMode main .question .btnsContainer a:hover {
+  background: #ccac00;
+  box-shadow: 0px 2px 0px 3px #f3a033, -2px 5px 0px 2px #fbc02d inset;
+}
+body.dayMode main .question .btnsContainer button:active, body.dayMode main .question .btnsContainer a:active {
+  background: #ffd700;
+  box-shadow: 0px 2px 0px 3px #e6be8a, -2px 5px 0px 2px #fdd835 inset;
+}
 main .question .btnsContainer a {
   text-decoration: none;
 }
@@ -166,6 +186,19 @@ main .question .btnsContainer a {
   transition: transform 0.5s;
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
+}
+body.dayMode .bluBbutton {
+  background: #ffd700; /* Example of alternate styling */
+  color: #000; /* Text color for day mode */
+  box-shadow: 0px 2px 0px 3px #f3a033, -2px 5px 0px 2px #fdd835 inset;
+}
+body.dayMode .bluBbutton:hover {
+  background: #ccac00;
+  box-shadow: 0px 2px 0px 3px #f3a033, -2px 5px 0px 2px #fbc02d inset;
+}
+body.dayMode .bluBbutton:active {
+  background: #ffd700;
+  box-shadow: 0px 2px 0px 3px #e6be8a, -2px 5px 0px 2px #fdd835 inset;
 }
 
 .headingSnabba {
@@ -226,6 +259,19 @@ main .question a:active {
   transition: transform 0.5s;
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
+}
+body.dayMode main .question a {
+  background: #ffd700; /* Example of alternate styling */
+  color: #000; /* Text color for day mode */
+  box-shadow: 0px 2px 0px 3px #f3a033, -2px 5px 0px 2px #fdd835 inset;
+}
+body.dayMode main .question a:hover {
+  background: #ccac00;
+  box-shadow: 0px 2px 0px 3px #f3a033, -2px 5px 0px 2px #fbc02d inset;
+}
+body.dayMode main .question a:active {
+  background: #ffd700;
+  box-shadow: 0px 2px 0px 3px #e6be8a, -2px 5px 0px 2px #fdd835 inset;
 }
 main .question .InstructionsContainer {
   display: flex;
@@ -316,6 +362,19 @@ main .question .InstructionsContainer .questions #questionContainer label:active
   background: #6949fd;
   box-shadow: 0px 2px 0px 3px #5133d6, -2px 5px 0px 2px #7658ff inset;
 }
+body.dayMode main .question .InstructionsContainer .questions #questionContainer label {
+  background: #ffd700; /* Example of alternate styling */
+  color: #000; /* Text color for day mode */
+  box-shadow: 0px 2px 0px 3px #f3a033, -2px 5px 0px 2px #fdd835 inset;
+}
+body.dayMode main .question .InstructionsContainer .questions #questionContainer label:hover {
+  background: #ccac00;
+  box-shadow: 0px 2px 0px 3px #f3a033, -2px 5px 0px 2px #fbc02d inset;
+}
+body.dayMode main .question .InstructionsContainer .questions #questionContainer label:active {
+  background: #ffd700;
+  box-shadow: 0px 2px 0px 3px #e6be8a, -2px 5px 0px 2px #fdd835 inset;
+}
 main .question .InstructionsContainer .questions #questionContainer label.correct {
   background: #027100;
   box-shadow: 0px 2px 0px 3px #024201, -2px 5px 0px 2px #06a703 inset;
@@ -342,6 +401,15 @@ main .question .InstructionsContainer .questions #questionContainer ul li {
   align-items: center;
   padding-right: 20px;
   flex-wrap: wrap;
+}
+
+body.dayMode main .question .InstructionsContainer .questions #questionContainer label.correct {
+  background: #15b313;
+  box-shadow: 0px 2px 0px 3px #046103, -2px 5px 0px 2px #06a703 inset;
+}
+body.dayMode main .question .InstructionsContainer .questions #questionContainer label.incorrect {
+  background: #c42f0a;
+  box-shadow: 0px 2px 0px 3px #6d1702, -2px 5px 0px 2px #ff4b1e inset;
 }
 
 .fail {
@@ -397,6 +465,9 @@ main .question .InstructionsContainer.hemkunskap .choices {
   justify-content: space-between;
   padding: 0px 60px;
   border-bottom: white 1px solid;
+}
+body.dayMode main .question .InstructionsContainer.hemkunskap .choices {
+  border-bottom: black 1px solid;
 }
 main .question .InstructionsContainer.hemkunskap #questionContainer .dishContainer {
   display: flex;

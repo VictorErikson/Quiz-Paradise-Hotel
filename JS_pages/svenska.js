@@ -275,7 +275,7 @@ const finnished = (reason) => {
 
         const lost = () => {
 
-            if (score > 6){
+            if (score >= Math.floor(questions.length * 0.5)){
                 msg.innerText = 'Du och Matte är som ler och långhalm! Exakt lika "smarta".';
                 questionContainer.append(restartBtn);
             } else {
@@ -293,7 +293,7 @@ const finnished = (reason) => {
 
         }
 
-        if (score > 8){won()}
+        if (score > Math.floor(questions.length * 0.75)){won()}
         else lost()
     }
 
