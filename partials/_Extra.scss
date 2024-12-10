@@ -1,0 +1,82 @@
+body {
+    .mainExtra {
+        .question {
+            .InstructionsContainer {
+                max-width: 1000px;
+
+                .questions {
+                    #questionContainer {
+                        
+                        .questionContainer{
+
+                            padding-top: 20px;
+
+                            &:last-child {
+                                padding-bottom: 60px;
+                            }
+                            label {
+                                background: none;
+                                box-shadow: none;
+                                border: white 3px solid;
+                                border-radius: 0px;
+
+                                &.checked {
+                                    background: white;
+                                    color: black;
+                                }
+                                &:hover {
+                                    background: rgba(0, 0, 0, 1);
+                                    color: white;
+                                }
+
+                                input {
+                                    &:checked {
+                                        background: black;
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+body.dayMode {
+    .mainExtra {
+        .question {
+            .InstructionsContainer {
+                max-width: 1000px;
+
+                .questions {
+                    #questionContainer {
+                        label {
+                            background: none;
+                            box-shadow: none;
+                            border: white 3px solid;
+
+
+                            &.checked {
+                                background: white;
+                                color: black;
+                            }
+                            &:hover {
+                                background: rgba(0, 0, 0, 1);
+                                color: white;
+                                box-shadow: none;
+                            }
+
+                            input {
+                                &:checked {
+                                    background: black;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

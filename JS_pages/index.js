@@ -34,7 +34,7 @@ const modeSwitching = () => {
 }
 
 modeSwitch.addEventListener("click", modeSwitching);
-soundSymbol.addEventListener("click", toggleSound);
+// soundSymbol.addEventListener("click", toggleSound);
 
 setMode();
 

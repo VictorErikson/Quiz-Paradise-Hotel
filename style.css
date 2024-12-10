@@ -576,4 +576,54 @@ main .question .InstructionsContainer img.contester {
   position: unset;
   width: 200px;
   transform: none;
+}
+
+body .mainExtra .question .InstructionsContainer {
+  max-width: 1000px;
+}
+body .mainExtra .question .InstructionsContainer .questions #questionContainer .questionContainer {
+  padding-top: 20px;
+}
+body .mainExtra .question .InstructionsContainer .questions #questionContainer .questionContainer:last-child {
+  padding-bottom: 60px;
+}
+body .mainExtra .question .InstructionsContainer .questions #questionContainer .questionContainer label {
+  background: none;
+  box-shadow: none;
+  border: white 3px solid;
+  border-radius: 0px;
+}
+body .mainExtra .question .InstructionsContainer .questions #questionContainer .questionContainer label.checked {
+  background: white;
+  color: black;
+}
+body .mainExtra .question .InstructionsContainer .questions #questionContainer .questionContainer label:hover {
+  background: rgb(0, 0, 0);
+  color: white;
+}
+body .mainExtra .question .InstructionsContainer .questions #questionContainer .questionContainer label input:checked {
+  background: black;
+  color: white;
+}
+
+body.dayMode .mainExtra .question .InstructionsContainer {
+  max-width: 1000px;
+}
+body.dayMode .mainExtra .question .InstructionsContainer .questions #questionContainer label {
+  background: none;
+  box-shadow: none;
+  border: white 3px solid;
+}
+body.dayMode .mainExtra .question .InstructionsContainer .questions #questionContainer label.checked {
+  background: white;
+  color: black;
+}
+body.dayMode .mainExtra .question .InstructionsContainer .questions #questionContainer label:hover {
+  background: rgb(0, 0, 0);
+  color: white;
+  box-shadow: none;
+}
+body.dayMode .mainExtra .question .InstructionsContainer .questions #questionContainer label input:checked {
+  background: black;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
