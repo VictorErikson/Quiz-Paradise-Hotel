@@ -466,6 +466,13 @@ main .question .InstructionsContainer.hemkunskap .choices {
   padding: 0px 60px;
   border-bottom: white 1px solid;
 }
+main .question .InstructionsContainer.hemkunskap .choices h3 {
+  width: 50%;
+  text-align: start;
+}
+main .question .InstructionsContainer.hemkunskap .choices h3#false {
+  padding-left: 150px;
+}
 body.dayMode main .question .InstructionsContainer.hemkunskap .choices {
   border-bottom: black 1px solid;
 }
@@ -502,6 +509,7 @@ main .question .InstructionsContainer.hemkunskap #questionContainer .dishContain
 main .question .InstructionsContainer.hemkunskap #questionContainer ul {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 main .question .InstructionsContainer.hemkunskap #questionContainer .falseCategory {
   align-self: flex-end;
@@ -579,7 +587,10 @@ main .question .InstructionsContainer img.contester {
 }
 
 body .mainExtra .question .InstructionsContainer {
-  max-width: 1000px;
+  max-width: 1200px;
+}
+body .mainExtra .question .InstructionsContainer .info a {
+  margin: 20px 0px 40px 0px;
 }
 body .mainExtra .question .InstructionsContainer .questions #questionContainer .questionContainer {
   padding-top: 20px;
@@ -606,9 +617,6 @@ body .mainExtra .question .InstructionsContainer .questions #questionContainer .
   color: white;
 }
 
-body.dayMode .mainExtra .question .InstructionsContainer {
-  max-width: 1000px;
-}
 body.dayMode .mainExtra .question .InstructionsContainer .questions #questionContainer label {
   background: none;
   box-shadow: none;

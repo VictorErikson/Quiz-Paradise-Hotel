@@ -2,7 +2,14 @@ body {
     .mainExtra {
         .question {
             .InstructionsContainer {
-                max-width: 1000px;
+                max-width: 1200px;
+
+                .info {
+
+                    a {
+                        margin: 20px 0px 40px 0px;
+                    }
+                }
 
                 .questions {
                     #questionContainer {
@@ -47,7 +54,7 @@ body.dayMode {
     .mainExtra {
         .question {
             .InstructionsContainer {
-                max-width: 1000px;
+
 
                 .questions {
                     #questionContainer {
