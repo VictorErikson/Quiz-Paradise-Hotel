@@ -8,7 +8,7 @@ const questions = [
             { id: "prästen", label: "Före prästen", value: false }
         ],
         name: "skrattar",
-        quote: "“Jag har inte tänkt så mycket för jag har haft så jävla ont i huvudet av allt tänkande”. - Paulina “Paow” Danielsson"
+        quote: "”Då lägger jag till fittmästare på mitt cv” - Jonathan Hermansson"
     },
     {
         question: "När katten är borta dansar råttorna på...",
@@ -207,7 +207,7 @@ const finnished = (reason) => {
         
 
         questionCount.remove();
-        quote.innerText = '”Då lägger jag till fittmästare på mitt cv” - Jonathan Hermansson';
+        quote.innerText = '“Jag har inte tänkt så mycket för jag har haft så jävla ont i huvudet av allt tänkande”. - Paulina “Paow” Danielsson';
         questionContainer.innerHTML = ""
         const msg = document.createElement("h2");
         const matte = document.createElement("img");
@@ -342,7 +342,7 @@ const handleChoice = (answer, questionObj) => {
 
         const warning = document.createElement("h2");
         warning.innerText = "Dags att boka biljett till Paradise Hotel?";
-        warning.style.color = "#8f2207";
+        warning.style.color = "#d92b00";
         warning.style.fontSize = "24px";
         questionContainer.insertBefore(warning, questionContainer.firstChild)
 

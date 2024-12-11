@@ -108,6 +108,9 @@ doneBtn.addEventListener("click", () => {
     clearInterval(interval);
 })
 
+
+
+
 let countdownTime = 2 * 60;
 const timer = document.querySelector(".time");
 
@@ -139,6 +142,9 @@ const finnished = (reason) => {
     inFalsesCategory.forEach(dish => {
         if (dish.value === false) correctAnswers.push(dish);
     })
+
+
+    document.querySelector("#false").classList.remove("start");
 
     const points = correctAnswers.length;
     const timer = document.querySelector(".time");
@@ -245,10 +251,9 @@ const finnished = (reason) => {
     }
 }
 
-if (document.body.classList.contains("dayMode")){
-    document.querySelectorAll(".trueBtn").forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_back_black.png");
-    document.querySelectorAll(".falseBtn").forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_forward_black.png");
-} else {
-    document.querySelectorAll(".trueBtn").forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_back_white.png");
-    document.querySelectorAll(".falseBtn").forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_forward_white.png");
-}
+
+
+
+// document.querySelector("modeBtn").addEventListener("click", updateBtns); 
+// const modeBtns = document.querySelector(".modeBtn");
+// updateBtns();

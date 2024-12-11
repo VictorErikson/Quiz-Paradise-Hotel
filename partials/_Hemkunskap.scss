@@ -64,6 +64,10 @@ main {
 
                     &#false {
                         padding-left: 150px;
+
+                        &.start{
+                            width: auto;
+                        }
                     }
                 }
 

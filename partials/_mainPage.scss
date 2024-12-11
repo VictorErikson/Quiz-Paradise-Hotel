@@ -34,15 +34,8 @@ body.dayMode {
     main {
         .question {
             .InstructionsContainer {
-                background: linear-gradient(to top, rgba(255, 183, 0, 0.89), rgba(255, 248, 212, 0.493));
-                // background: linear-gradient(to bottom, rgba(255, 237, 240, 0.6), rgba(252, 17, 0, 0.6));
+                background: linear-gradient(to top, rgba(255, 183, 0, 0.89), rgba(255, 248, 212, 0.493)); 
             }
-            // .btnsContainer {
-            //     button, a{
-            //         @include btnLightPurple()
-
-            //     }
-            // }
         }
     }
 }
@@ -71,8 +64,6 @@ header {
             border-radius: 50px;
             padding: 3px;
             background: transparent;
-            // position: relative;
-            // transition: 0.2s;
 
             &:hover {
                 cursor: pointer;
@@ -110,7 +101,7 @@ main {
 
     .quote {
         margin-bottom: 140px;
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .question {
@@ -123,7 +114,6 @@ main {
         
         .InstructionsContainer{
             width: 400px;
-            // background-color: rgba(49, 29, 104, 0.6);
             background: linear-gradient(to bottom, rgba(120, 92, 247, 0.6), rgba(68, 52, 140, 0.6));
             padding: 40px;
             padding-top: 80px;
@@ -133,9 +123,9 @@ main {
 
 
             img{
-                max-width: 390px;
-                position: absolute;
-                top: -100px;
+                // width: 70000px;
+                // position: absolute;
+                // top: 50%;
             }
         }
         .btnsContainer{
@@ -143,7 +133,6 @@ main {
 
             padding-bottom: 3.5rem;
             gap: 1.5rem;
-            // width: 50%;
             button, a {
                 @include btnLightPurple();
                 width: 300px;

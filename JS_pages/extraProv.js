@@ -148,7 +148,7 @@ const finnished = (reason, questionsArr) => {
     const result = () => {
 
         choices.style.display = "";
-        quote.innerText = '“Hon är så dum att kossorna somnar” - Olinda Borggren';
+        quote.innerText = '“Det finns väl två olika Afrika?” - Josefine Caarle';
         questionContainer.innerHTML = ""
         const msg = document.createElement("h2");
         const resultsTrueUl = document.createElement("ul");

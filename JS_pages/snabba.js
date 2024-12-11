@@ -72,7 +72,7 @@ const questions = [
     {
         category: "HISTORIA",
         question: "När skiljdes Svenska kyrkan från staten?",
-        quote: "“En ko har väl tre-fyra hjärtan?” - Smail Alihodzic",
+        quote: "“För två år sedan kände jag att jag ville göra något annorlunda. Så då tog jag bort min förhud. Nu ligger den i min pappas frys” - Alexander Wigren",
         options: [
             { id: "1874", label: "År 1874", value: false },
             { id: "1791", label: "År 1791", value: false },
@@ -132,7 +132,7 @@ let warningTriggered = false;
 
 // klocka
 
-let countdownTime = 2 * 60;
+let countdownTime = 1 * 60;
 const timer = document.querySelector(".time");
 
 const updateTimer = () => {
@@ -160,7 +160,7 @@ const finnished = (reason) => {
     
     const result = () => {
         questionCount.remove();
-        quote.innerText = '“För två år sedan kände jag att jag ville göra något annorlunda. Så då tog jag bort min förhud. Nu ligger den i min pappas frys” - Alexander Wigren';
+        quote.innerText = '“En ko har väl tre-fyra hjärtan?” - Smail Alihodzic';
         questionContainer.innerHTML = ""
         const msg = document.createElement("h2");
         const resultsUl = document.createElement("ul");
@@ -287,7 +287,7 @@ const handleChoice = (answer, questionObj) => {
 
         const warning = document.createElement("h2");
         warning.innerText = "Dags att boka biljett till Paradise Hotel?";
-        warning.style.color = "#8f2207";
+        warning.style.color = "#d92b00";
         warning.style.fontSize = "24px";
         questionContainer.insertBefore(warning, questionContainer.firstChild)
 

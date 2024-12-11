@@ -82,7 +82,7 @@ main {
 }
 main .quote {
   margin-bottom: 140px;
-  font-size: 20px;
+  font-size: 30px;
 }
 main .question {
   width: 100%;
@@ -100,11 +100,6 @@ main .question .InstructionsContainer {
   position: relative;
   border-radius: 60px;
   margin-bottom: 40px;
-}
-main .question .InstructionsContainer img {
-  max-width: 390px;
-  position: absolute;
-  top: -100px;
 }
 main .question .btnsContainer {
   display: flex;
@@ -280,10 +275,9 @@ main .question .InstructionsContainer {
   max-width: 600px;
 }
 main .question .InstructionsContainer img {
-  min-width: 300px;
-  max-width: 480px;
+  width: 500px;
   position: absolute;
-  top: -2%;
+  top: -20px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -472,6 +466,9 @@ main .question .InstructionsContainer.hemkunskap .choices h3 {
 }
 main .question .InstructionsContainer.hemkunskap .choices h3#false {
   padding-left: 150px;
+}
+main .question .InstructionsContainer.hemkunskap .choices h3#false.start {
+  width: auto;
 }
 body.dayMode main .question .InstructionsContainer.hemkunskap .choices {
   border-bottom: black 1px solid;
