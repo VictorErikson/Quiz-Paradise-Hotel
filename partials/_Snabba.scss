@@ -43,7 +43,7 @@ main {
             display: flex;
             flex-direction: column;
             width: 80%;
-            max-width: 600px;
+            max-width: 800px;
             img{
                 width: 500px;
                 position: absolute;
@@ -75,6 +75,22 @@ main {
                 width: 80%;
                 max-width: 300px;
                 align-self: center;
+            }
+
+            ul {
+                width: 100%;
+                
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    list-style: none;
+                    text-align: left;
+                    display: flex;
+                    align-items: center;
+                    padding-right: 20px;
+                    flex-wrap: wrap;    
+                }
             }
             .questions {
                 border: none;
@@ -123,22 +139,6 @@ main {
                         pointer-events: none;
                     }
                     
-
-                    ul {
-                        width: 100%;
-                        
-                        li {
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-                            list-style: none;
-                            text-align: left;
-                            display: flex;
-                            align-items: center;
-                            padding-right: 20px;
-                            flex-wrap: wrap;    
-                        }
-                    }
                 }
             }
         }

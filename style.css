@@ -272,7 +272,7 @@ main .question .InstructionsContainer {
   display: flex;
   flex-direction: column;
   width: 80%;
-  max-width: 600px;
+  max-width: 800px;
 }
 main .question .InstructionsContainer img {
   width: 500px;
@@ -301,6 +301,20 @@ main .question .InstructionsContainer button {
   width: 80%;
   max-width: 300px;
   align-self: center;
+}
+main .question .InstructionsContainer ul {
+  width: 100%;
+}
+main .question .InstructionsContainer ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  flex-wrap: wrap;
 }
 main .question .InstructionsContainer .questions {
   border: none;
@@ -381,20 +395,6 @@ main .question .InstructionsContainer .questions #questionContainer input {
   position: fixed;
   opacity: 0;
   pointer-events: none;
-}
-main .question .InstructionsContainer .questions #questionContainer ul {
-  width: 100%;
-}
-main .question .InstructionsContainer .questions #questionContainer ul li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  padding-right: 20px;
-  flex-wrap: wrap;
 }
 
 body.dayMode main .question .InstructionsContainer .questions #questionContainer label.correct {
