@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    const isRootPage = location.pathname === "/" || location.pathname.endsWith("index.html") || location.pathname === "/Quiz-Paradise-Hotel/";
+    const assetBase = isRootPage ? "assets" : "../assets";
 
     //Det blev allmän kod till alla sidor i index, borde gjort en egen JS-fil men nu blev det såhär...
     const modeSwitch = document.querySelector("#modeSwitch");
@@ -21,11 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (falseBtn && trueBtn){
             if (mode === "dayMode"){
-                trueBtn.forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_back_black.png");
-                falseBtn.forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_forward_black.png");
+                trueBtn.forEach(arrow => arrow.firstChild.src = `${assetBase}/symbols/arrow_back_black.png`);
+                falseBtn.forEach(arrow => arrow.firstChild.src = `${assetBase}/symbols/arrow_forward_black.png`);
             } else {
-                trueBtn.forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_back_white.png");
-                falseBtn.forEach(arrow => arrow.firstChild.src = "../assets/symbols/arrow_forward_white.png");
+                trueBtn.forEach(arrow => arrow.firstChild.src = `${assetBase}/symbols/arrow_back_white.png`);
+                falseBtn.forEach(arrow => arrow.firstChild.src = `${assetBase}/symbols/arrow_forward_white.png`);
             }
         }
         
@@ -39,15 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.toggle("dayMode", nightOrDayMode === "dayMode");
 
         if (nightOrDayMode === "dayMode"){
-            sun.src = "../assets/symbols/sunny_yellow.png" 
-            moon.src = "../assets/symbols/mode_night_grey.png"
+            sun.src = `${assetBase}/symbols/sunny_yellow.png` 
+            moon.src = `${assetBase}/symbols/mode_night_grey.png`
 
             soundSymbol && setVolume();
 
         
         }else {
-            sun.src = "../assets/symbols/sunny_grey.png" 
-            moon.src = "../assets/symbols/mode_night_yellow.png"
+            sun.src = `${assetBase}/symbols/sunny_grey.png` 
+            moon.src = `${assetBase}/symbols/mode_night_yellow.png`
 
             soundSymbol && setVolume();
             
@@ -67,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (volume) {
-            volume === "on" ? soundSymbol.src = `../assets/symbols/volume_up_${color}.svg` : soundSymbol.src = `../assets/symbols/volume_off_${color}.svg`
+            volume === "on" ? soundSymbol.src = `${assetBase}/symbols/volume_up_${color}.svg` : soundSymbol.src = `${assetBase}/symbols/volume_off_${color}.svg`
         } else {
-            soundSymbol.src = `../assets/symbols/volume_off_${color}.svg`
+            soundSymbol.src = `${assetBase}/symbols/volume_off_${color}.svg`
         }
     }
 
