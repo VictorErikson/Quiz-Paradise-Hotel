@@ -111,7 +111,7 @@ doneBtn.addEventListener("click", () => {
 
 
 
-let countdownTime = 2 * 60;
+let countdownTime = 3 * 60;
 const timer = document.querySelector(".time");
 
 const updateTimer = () => {

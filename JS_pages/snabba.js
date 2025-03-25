@@ -132,7 +132,7 @@ let warningTriggered = false;
 
 // klocka
 
-let countdownTime = 1 * 60;
+let countdownTime = 2 * 60;
 const timer = document.querySelector(".time");
 
 const updateTimer = () => {
