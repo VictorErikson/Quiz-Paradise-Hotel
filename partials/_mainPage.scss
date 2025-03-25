@@ -2,7 +2,7 @@
 
 body {
     height: 100vh;
-    background-image: url("../assets/images/background.svg");
+    background-image: url("assets/images/background.svg");
     // background: color(red);
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,7 +16,7 @@ body {
 }
 
 body.dayMode {
-    background-image: url("../assets/images/backgroundDay.svg");
+    background-image: url("assets/images/backgroundDay.svg");
     color: black;
     header {
         
